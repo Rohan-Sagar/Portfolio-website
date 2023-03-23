@@ -1,78 +1,6 @@
-import React, { useState, useEffect, useContext} from 'react';
 import styled from 'styled-components';
-import axios from "axios";
-import cheerio from "cheerio";
-import EventContext from '../context/useContext';
 
-function UFCTimer() {
-  const [timeLeft, setTimeLeft] = useState(300);
-  const event = useContext(EventContext);
-
-  useEffect(() => {
-    const countdown = setInterval(() => {
-      setTimeLeft(timeLeft => {
-        if (timeLeft === 0) {
-          clearInterval(countdown);
-          return 300;
-        } else {
-          return timeLeft - 1;
-        }
-      });
-    }, 1000);
-
-    return () => {
-        clearInterval(countdown);
-      };
-    }, []);
-
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-  
-    if (minutes < 10 && minutes >= 0) {
-      minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-      seconds = "0" + seconds;
-    }
-
-  return (
-    <>
-    <Timer>
-      <Clock>
-        {/* <Info>
-          <span>Bantamweight Bout</span>
-        </Info> */}
-        <ClockWrapper>
-          <Logo>
-            <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
-          </Logo>
-          <span>{minutes}:{seconds}</span>
-        </ClockWrapper>
-      </Clock>
-    <Contestant>
-      <Container>
-        <TextWrapper>
-            <span>{event.fighters[0]}</span>
-        </TextWrapper>
-        <RedBanner/>
-      </Container>
-    </Contestant>
-    <ContestantTwo>
-      <Container>
-        <TextWrapper>
-            <span>{event.fighters[1]}</span>
-        </TextWrapper>
-        <BlueBanner/>
-      </Container>
-    </ContestantTwo>
-  </Timer>
-    <Date>{event.eventDate}</Date>
-  </>
-  )}
-
-export default UFCTimer
-
-const Clock = styled.div`
+export const Clock = styled.div`
   z-index: 1;
   box-sizing: border-box;
   width: 400px;
@@ -84,7 +12,8 @@ const Clock = styled.div`
   height: 100%;
   display: flex;
 `
-const Logo = styled.div`
+
+export const Logo = styled.div`
   width: 69px;
   transform: translate(0%, -50%);
   left: 0px;
@@ -103,7 +32,7 @@ const Logo = styled.div`
   }
 `
 
-const ClockWrapper = styled.div`
+export const ClockWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
@@ -126,7 +55,7 @@ const ClockWrapper = styled.div`
   }
 `
 
-const Info = styled.div`
+export const Info = styled.div`
   transform: translate(-50%, 0%);
   width: fit-content;
   position: absolute;
@@ -154,7 +83,7 @@ const Info = styled.div`
   }
 `
 
-const RedBanner = styled.span`
+export const RedBanner = styled.span`
   position: absolute;
   top: 50%;
   right: 0;
@@ -166,13 +95,14 @@ const RedBanner = styled.span`
   background-color: rgb(143, 2, 14);
 `
 
-const BlueBanner = styled(RedBanner) `
+export const BlueBanner = styled(RedBanner) `
   background-color: rgb(41, 71, 144) !important;
   transform: translate(0%, -50%);
   right: auto;
   left: 0;
 `
-const Contestant = styled.div`
+
+export const Contestant = styled.div`
   order: -1;
   overflow: hidden;
   color: white;
@@ -189,12 +119,12 @@ const Contestant = styled.div`
   width: 100%;
 `
 
-const ContestantTwo = styled(Contestant)`
+export const ContestantTwo = styled(Contestant)`
   order: 1;
   flex-direction: row;
 `
 
-const TextWrapper = styled.div`
+export const TextWrapper = styled.div`
   opacity: 1;
   visibility: inherit;
   transform: translate(0%, 0px);
@@ -212,7 +142,7 @@ const TextWrapper = styled.div`
   font-weight: 500;
 `
 
-const Container = styled.div`
+export const Container = styled.div`
   -webkit-order: -1;
   order: -1;
   overflow: hidden;
@@ -232,15 +162,14 @@ const Container = styled.div`
   height: 100%;
 `
 
-const Timer = styled.div`
+export const Timer = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
 `
 
-const Date = styled.span`
+export const Date = styled.span`
   font-size: 18px;
   color: white;
   margin: 0 auto;
 `
-

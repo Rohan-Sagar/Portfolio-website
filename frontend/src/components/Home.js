@@ -1,9 +1,9 @@
 import React, { Suspense, lazy} from 'react';
 import styled from 'styled-components';
-import LandingPage from './LandingPage';
-import Projects from './Projects';
-import TerminalUI from './TerminalUI';
-import Experience from './Experience';
+import LandingPage from './LandingPage/index';
+import Projects from './Projects/index';
+import TerminalUI from './TerminalUI/index';
+import Experience from './Experience/index';
 
 // const HomePage = React.lazy(() => LandingPage);
 

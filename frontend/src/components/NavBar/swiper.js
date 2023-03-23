@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import image1 from "./development.svg"
-import image2 from "./design.svg";
-import image3 from "./deployment.svg";
-import image4 from "./icons8-python-96.png";
+import image1 from "./assets/development.svg"
+import image2 from "./assets/design.svg";
+import image3 from "./assets/deployment.svg";
+import image4 from "./assets/icons8-python-96.png";
+import { DropdownTable } from "./styles/Navbar.styles";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./styles.css";
+import "./styles/styles.css";
 
 const pages = [
   {
@@ -240,31 +241,3 @@ function Dropdown() {
 
 export default Dropdown;
 
-const DropdownTable = styled.div`
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 30px;
-  }
-  .grid-container > div {
-    padding: 0px;
-    border: none;
-    white-space: nowrap;
-  }
-  .grid-container h4 {
-    color: grey;
-    font-size: 12px;
-  }
-  .grid-container ul {
-    list-style-type: none;
-    font-size: 13px;
-    padding: 0px;
-    margin-left: 0px;
-    margin-top: -9px;
-  }
-`;
