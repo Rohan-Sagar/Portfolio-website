@@ -1,51 +1,59 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
+import Dropdown from './swiper';
 
-function Header() {
+function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
-    <Nav>
-      <NavMenu>
-        <LeftMenu>
+    <>
+      {isOpen && <Dropdown />}
+      <Nav>
+        <NavMenu>
+          <LeftMenu>
+            <a href="/">
+              <span>HOME</span>
+            </a>
+            <a onClick={toggleDropdown} href='#skills'>
+              <span>SKILLS</span>
+            </a>
+            <a href="#experience">
+              <span>EXPERIENCE</span>
+            </a>
+            <a href="#projects">
+              <span>PROJECTS</span>
+            </a>
+          </LeftMenu>
+
           <a href="/">
-            <span>HOME</span>
+            <Logo>RS</Logo>
           </a>
-          <a href="#experience">
-            <span>EXPERIENCE</span>
-          </a>  
-          <a href="#projects">
-            <span>PROJECTS</span>
-          </a>
-          <a href="#hobbies">   
-            <span>HOBBIES</span>
-          </a>
-        </LeftMenu>
-        <a href="/">
-          <Logo>RS</Logo>
-        </a>
-        <RightMenu>
-          <a href='https://github.com/rohan-sagar1' target="_blank" rel="noreferrer">
-            <span>
-              <img src="/assets/github-mark.png" alt="github" />
-            </span>
-          </a>
-          <a href='https://www.linkedin.com/in/rohan-sagar3/' target="_blank" rel="noreferrer">
-            <span>
-              <img src="/assets/LI-In-Bug.png" alt="linkedin"/>
-            </span>
-          </a>
-          <a href='mailto:rsagar@purdue.edu' target="_blank" rel="noreferrer">
-            <span>
-              <img src="/assets/icons8-mail-53.png" alt="email"/>
-            </span>
-          </a>
-        </RightMenu>
-      </NavMenu>
-    </Nav>
+
+          <RightMenu>
+            <a href='https://github.com/rohan-sagar1' target="_blank" rel="noreferrer">
+              <span>
+                <img src="/assets/github-mark.png" alt="github" />
+              </span>
+            </a>
+            <a href='https://www.linkedin.com/in/rohan-sagar3/' target="_blank" rel="noreferrer">
+              <span>
+                <img src="/assets/LI-In-Bug.png" alt="linkedin"/>
+              </span>
+            </a>
+            <a href='mailto:rsagar@purdue.edu' target="_blank" rel="noreferrer">
+              <span>
+                <img src="/assets/icons8-mail-53.png" alt="email"/>
+              </span>
+            </a>
+          </RightMenu>
+        </NavMenu>
+      </Nav>
+    </>
   )
 }
 
-export default Header
+export default NavBar
 
 const Nav = styled.nav`
   position: fixed;
@@ -60,7 +68,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
-  z-index: 3;
+  z-index: 1;
   @media (max-width: 1250px) {
     width: 100%;
 `;
@@ -71,7 +79,7 @@ const NavMenu = styled.div`
   align-items: center;
   flex: 1;
   margin-top: 10px;
-  a{
+  a {
     display: flex;
     align-items: center;
     padding: 0 12px;
@@ -158,4 +166,3 @@ const RightMenu = styled.div`
     height: 25px;
   }
 `;
-

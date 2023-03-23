@@ -1,0 +1,84 @@
+body .swiper-slide {
+  display: flex;
+  gap: 24px;
+  height: 200px;
+  padding: 0 100px 0 20px;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.swiper {
+  position: absolute;
+  background-color: white !important;
+  width: 50%;
+  border: 1px solid;
+  border-radius: 0 0 5px 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .swiper {
+    top: 100px;
+    left: 180px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .swiper {
+    width: 100%;
+    top: 100px;
+  }
+}
+
+.swiper h2 {
+  font-size: 13px;
+  color: grey;
+  margin-bottom: -3px;
+}
+
+.swiper thead {
+  font-size: 13px;
+  color: grey;
+}
+
+.swiper td {
+  font-size: 14px;
+  color: black;
+  font-style: normal;
+
+}
+
+body .swiper-slide > img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: #f4f4fd;
+  padding: 10px;
+  margin-top: 40px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+body .swiper-slide > div {
+  flex: 1 1 auto;
+}
+
+body .swiper-horizontal > .swiper-pagination-bullets {
+  bottom: 2px;
+  left: 0;
+  text-align: left;
+  padding-left: 135px;
+}
+
+body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  background: #6c63ff;
+  transition: 0.3s;
+  scale: 1.25;
+}

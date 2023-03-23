@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'UfcFont';
   src: url("/public/Share/Share-Bold.ttf");
@@ -11,7 +12,6 @@
   src: url("/public/UFC-sternbach-font-betterstudio.com/Sternbach-Bold-Italic.otf");
   font-style: bold;
 }
-
 
 body {
   margin: 0;

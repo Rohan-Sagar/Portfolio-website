@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext} from 'react';
 import styled from "styled-components";
 import UFCTimer from "./UFCTimer";
+import Experience from './Experience';
 import EventContext from '../context/useContext';
 import axios from "axios";
 import cheerio from "cheerio";
@@ -97,9 +98,9 @@ function LandingPage() {
           </Picture>
 
           <RightMenu>
-          <EventContext.Provider value={event}>
-            <UFCTimer/>
-          </EventContext.Provider>
+            <EventContext.Provider value={event}>
+              <UFCTimer/>
+            </EventContext.Provider>
               <UserSelect>
                 <span>What are your picks for the fight?</span>
                 <RedOption onClick={() => handleSelection("Red")}>
@@ -145,8 +146,6 @@ const Landing = styled.div`
   justify-content: space-between;
   margin: 150px auto 0;
   align-items: center;
-  // margin-top: 10%;
-  // margin-left: 2%;
 `
 
 const LeftMenu = styled.div`
@@ -168,8 +167,8 @@ const Picture = styled.div`
   height: 100%;
   display: flex;
   img {
-    height: 350px;
-    margin: auto;
+    height: 320px;
+    margin: 120px 0px 0px 100px;
     border-radius: 6px;
   }
 
@@ -177,6 +176,9 @@ const Picture = styled.div`
     order: 2;
     width: 50%;
     margin-top: 50px;
+    img {
+      margin: auto;
+    };
   }
 
 `;
@@ -188,6 +190,7 @@ const RightMenu = styled.div`
   height: 100%;
   gap: 20px;
   justify-content: center;
+  margin-top: 30px;
 
   @media (max-width: 1250px){
     order: 3;
@@ -294,18 +297,11 @@ const UserSelect = styled.div`
 `
 
 const RedOption = styled.div`
-  // position: relative;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  width: 100px;
+  width: 150px;
   margin: auto;
-  // height: 40px;
-  // margin-left: 50px;
   background-color: rgb(143, 2, 14);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
-  // color: white;
   font-family: "Share Tech Mono", monospace;
   letter-spacing: 2px;
   text-transform: uppercase;

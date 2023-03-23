@@ -52,12 +52,12 @@ function TerminalUI() {
   
     return (
       <StyledIDEContainer>
-        <Header>
+        <NavBar>
             <RedCircle></RedCircle>
             <YellowCircle></YellowCircle>
             <GreenCircle></GreenCircle>
             <h3>Script.py</h3>
-        </Header>
+        </NavBar>
         <StyledCodeEditor>
             <LineNumber/>
                 <TextEditor>
@@ -107,7 +107,7 @@ const StyledIDEContainer = styled.div`
   background-color: white;
 `;
 
-const Header = styled.div`
+const NavBar = styled.div`
     font-family: 'Arial', sans-serif;
     display: flex;
     height: 40px;

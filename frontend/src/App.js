@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from "./components/Header";
+import NavBar from "./components/NavBar/index";
 import Home from "./components/Home";
+import Dropdown from "./components/NavBar/swiper";
 
 function App() {
   return (
     <>
-    <Header/>
+    <NavBar/>
     <Router>
         <Routes>
           <Route
