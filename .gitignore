@@ -5,3 +5,6 @@ dist/
 .DS_Store
 coverage/
 .vscode/
+.gitignore
+frontend/package.json
+frontend/package-lock.json
