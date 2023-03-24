@@ -12,7 +12,7 @@ function Experience() {
                 <Details>
                     <h2>The Data Mine - Purdue University</h2>
                     <h3>Undergraduate Data Science Researcher</h3>
-                    <h4>August 2021 - December 2021</h4>
+                    <h4>Aug 2021 - Dec 2021</h4>
                     <p>Goal: Design an NLP-based solution to forecast the experimental settings for HPLC-MS/MS Assay in 
                         Pharmacokinetics, which would minimize the trial and error required for new drug tests and 
                         accelerate drug delivery.
@@ -29,7 +29,7 @@ function Experience() {
                     <li>
                         Manually annotated keywords in 50 abstracts to create NER entities for a data corpus to train 
                         an NLP model, and further used RegEx to annotate keywords in abstracts, 
-                        reducing manual annotation time by 200%
+                        reducing manual annotation time by 200%.
                     </li>
                     <li>
                         Trained, evaluated, and compared several NLP models (including vanilla BERT, 

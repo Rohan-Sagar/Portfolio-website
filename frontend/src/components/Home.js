@@ -12,6 +12,7 @@ function Home() {
     <Container>
       <LandingPage/>
       <Experience/>
+      <Projects/>
     </Container>
   )
 }

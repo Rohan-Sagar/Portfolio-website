@@ -15,7 +15,7 @@ function NavBar() {
             <a href="/">
               <span>HOME</span>
             </a>
-            <a onClick={toggleDropdown} href='#skills'>
+            <a onClick={toggleDropdown}>
               <span>SKILLS</span>
             </a>
             <a href="#experience">

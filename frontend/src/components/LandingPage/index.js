@@ -29,7 +29,7 @@ const INITIAL_STATES = [
 ]
 
 function LandingPage() {
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState("");
   const [event, setEvent] = useState({
     eventDate: '',
@@ -64,8 +64,6 @@ function LandingPage() {
       interval = setInterval(() => {
         setCount(count + 1);
       }, 3000);
-    } else {
-      setCount(2);
     }
     return () => clearInterval(interval);
   }, [count]);
