@@ -35,7 +35,7 @@ function Projects() {
                   facilitating team-wide design efforts.
                 </li>
                 <li>
-                  Implemented hybrid database solution using AWS s3 and Pinata 
+                  Implemented hybrid database solution using AWS S3 and Pinata 
                   IPFS for CAD file storage.
                 </li>
                 <li>

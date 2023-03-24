@@ -31,6 +31,7 @@ export const Box = styled.div`
     height: 75%;
     .swiper {
       width: 90%;
+      font-family: 'UfcFont', sans-serif;
       height: 75%;
       margin: 40px auto auto -110px;
       border: none;
@@ -50,23 +51,26 @@ export const Box = styled.div`
     
     .swiper-slide div {
       position: relative;
-      left: 3%;
-      top: 20%;
+      top: 30%;
+      left: 5%;
       h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         color: black;
       }
 
       h3 {
+        font-size: 1.5rem;
         margin-bottom: 0;
       }
 
       h4 {
+        font-size: 1rem;
         margin-top: 0;
         color: #777777;
       }
 
       li {
+        font-size: 1.2rem;
         list-style-type: disc;
       }
     }
