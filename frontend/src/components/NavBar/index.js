@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Nav, NavMenu, LeftMenu, Logo, RightMenu } from './styles/Navbar.styles';
-import Dropdown from './swiper';
+import Dropdown from './swiperDropdown';
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
