@@ -7,8 +7,8 @@ import image2 from "./assets/design.svg";
 import image3 from "./assets/deployment.svg";
 import image4 from "./assets/icons8-python-96.png";
 import { DropdownTable } from "./styles/Navbar.styles";
-import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/swiper.min.css";
+import "swiper/modules/pagination/pagination.min.css";
 import "./styles/styles.css";
 
 const pages = [
