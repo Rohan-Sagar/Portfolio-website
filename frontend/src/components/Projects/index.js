@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Box } from './styles/Projects.styles';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import TerminalUI from '../TerminalUI/index';
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/swiper.min.css";
+import "swiper/modules/pagination/pagination.min.css";
+import "swiper/modules/navigation/navigation.min.css";
 
 function Projects() {
   return (

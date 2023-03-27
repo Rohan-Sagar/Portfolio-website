@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react.js";
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import image1 from "./assets/development.svg"
 import image2 from "./assets/design.svg";
 import image3 from "./assets/deployment.svg";
