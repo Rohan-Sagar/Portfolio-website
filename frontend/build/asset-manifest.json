@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0c01f8cd.css",
+    "main.js": "/static/js/main.2c042ff0.js",
+    "static/media/Share-Regular.ttf": "/static/media/Share-Regular.380ba4337f16f81374cd.ttf",
+    "static/media/Share-Bold.ttf": "/static/media/Share-Bold.3b6d1306ca784fdf2660.ttf",
+    "static/media/Share-Italic.ttf": "/static/media/Share-Italic.a89a71da34e2c5d4b3b7.ttf",
+    "static/media/Share-BoldItalic.ttf": "/static/media/Share-BoldItalic.f95a1648e578c7eac4e2.ttf",
+    "static/media/Sternbach-Bold-Italic.otf": "/static/media/Sternbach-Bold-Italic.3c9e4cf9868070b38901.otf",
+    "static/media/design.svg": "/static/media/design.61515ff86299421940903760d70ac420.svg",
+    "static/media/development.svg": "/static/media/development.4ed74d0124e06e15d55b849599d522d2.svg",
+    "static/media/deployment.svg": "/static/media/deployment.b808cdb0a0582232bac8a49c8f1cebf2.svg",
+    "index.html": "/index.html",
+    "main.0c01f8cd.css.map": "/static/css/main.0c01f8cd.css.map",
+    "main.2c042ff0.js.map": "/static/js/main.2c042ff0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c01f8cd.css",
+    "static/js/main.2c042ff0.js"
+  ]
+}
