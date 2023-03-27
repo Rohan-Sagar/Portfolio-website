@@ -16,8 +16,8 @@ import {
   BlueOption } from './LandingPage.styles';
 import UFCTimer from '../UFCTimer/index';
 import EventContext from '../../context/useContext';
-import axios from "axios";
-import cheerio from "cheerio";
+import axios from 'axios';
+import cheerio from 'cheerio';
 
 let id = 0;
 

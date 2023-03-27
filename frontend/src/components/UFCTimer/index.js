@@ -13,8 +13,7 @@ import {
   Timer,
   Date,
 } from './UFCTimer.styles';
-import axios from "axios";
-import cheerio from "cheerio";
+import axios from 'axios';
 import EventContext from '../../context/useContext';
 
 function UFCTimer() {
