@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import image1 from "./assets/development.svg"
 import image2 from "./assets/design.svg";
 import image3 from "./assets/deployment.svg";
 import image4 from "./assets/icons8-python-96.png";
 import { DropdownTable } from "./styles/Navbar.styles";
-import "swiper/swiper.min.css";
-import "swiper/modules/pagination/pagination.min.css";
+import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./styles/styles.css";
 
 const pages = [
