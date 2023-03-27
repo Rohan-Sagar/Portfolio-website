@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Box } from './styles/Projects.styles';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import TerminalUI from '../TerminalUI/index';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -22,7 +23,7 @@ function Projects() {
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             className="mySwiper"
           >
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <div>
                 <h2>Julienne - Slicer Software</h2>
                 <h3>Full-stack Developer</h3>
@@ -50,13 +51,14 @@ function Projects() {
                   Expanded range of supported CAD designs by integrating 3DM file format.
                 </li>
               </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
             <SwiperSlide>
               <div>
                 <h2>Candy marketplace</h2>
                 <h3>Full-stack Developer</h3>
                 <h4>Nov 2022 - Nov 2022</h4>
-                <li>
+                <li>Add bullets from Resume</li>
+                {/* <li>
                   Developed a website for trick or treat reviewing and candy 
                   marketplace using MERN stack.
                 </li>
@@ -67,7 +69,7 @@ function Projects() {
                 <li>
                   Awarded for having the best authentication system at the 
                   Demon Hacks hackathon. 
-                </li>
+                </li> */}
               </div>
             </SwiperSlide>
             <SwiperSlide>
@@ -75,7 +77,22 @@ function Projects() {
                 <h2>Fundamental Analysis Bot</h2>
                 <h3>Python Developer</h3>
                 <h4>Aug 2021 - May 2022</h4>
-                <li>
+                <li>Add bullets from Resume</li>
+                <li>Add bullets from Resume</li>
+                <li>Add bullets from Resume</li>
+                <li>Add bullets from Resume</li>
+              </div>
+              <TerminalUI />
+            </SwiperSlide>
+          </Swiper>
+        </Box>
+      </Container>
+    </>
+  )
+}
+
+export default Projects;
+                {/* <li>
                   Developed bot using SimFin dataset and FinRL deep learning 
                   algorithms to analyze securities and make informed investment 
                   decisions.
@@ -87,14 +104,4 @@ function Projects() {
                 <li>
                   Evaluated the performance of the bot using various metrics, such 
                   as returns on investment and Sharpe ratio.
-                </li>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </Box>
-      </Container>
-    </>
-  )
-}
-
-export default Projects;
+                </li> */}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react'
 import {
-  Circle,
   RedCircle,
   YellowCircle,
   GreenCircle,
@@ -66,16 +65,15 @@ function TerminalUI() {
             <RedCircle></RedCircle>
             <YellowCircle></YellowCircle>
             <GreenCircle></GreenCircle>
-            <h3>Script.py</h3>
+            <h4>Script.py</h4>
         </NavBar>
-        <StyledCodeEditor>
-            <LineNumber/>
-                <TextEditor>
-                    <p>import <span>os</span></p>
-                    <p>import <span>requests</span></p>
-                    <br/>
-                    <p>def <label>trade_btc(</label><span>username, password</span><label>)</label></p>
-                </TextEditor>
+        <StyledCodeEditor> 
+          <TextEditor>
+            <span style={{color: "#F733FF"}}>import&nbsp;<span style={{color: "#FFF"}}>os</span></span>
+            <span style={{color: "#F733FF"}}>import&nbsp;<span style={{color: "#FFF"}}>requests</span></span>
+            <br/>
+            <span style={{color: "#F733FF"}}>def&nbsp;<span style={{color: "#FAFF33"}}>trade_btc(<span style={{color: "#3DFFE4"}}>username, password</span>):</span></span>
+          </TextEditor>
         </StyledCodeEditor>
       </StyledIDEContainer>
     );
@@ -86,3 +84,5 @@ export default TerminalUI
 {/* <StyledCodeEditor value={script} onChange={handleScriptChange}> */}
 
 
+//#FF3348 - red
+//#23CC0F - green

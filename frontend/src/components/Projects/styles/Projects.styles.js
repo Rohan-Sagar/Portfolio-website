@@ -30,32 +30,35 @@ export const Box = styled.div`
     width: 90%;
     height: 75%;
     .swiper {
-      width: 90%;
+      width: 95%;
       font-family: 'UfcFont', sans-serif;
       height: 75%;
-      margin: 40px auto auto -110px;
+      margin: 40px auto auto -150px;
       border: none;
     }
     
     .swiper-wrapper {
-      background-color: #fff;
+      background-color: #191A20;
     }
     
     .swiper-slide {
       height: 90%;
       display: flex;
       justify-content: center;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
+      margin-right: 0px;
     }
     
     .swiper-slide div {
+      // background-color: pink;
       position: relative;
-      top: 30%;
+      // top: 30%;
       left: 5%;
+      color: white;
       h2 {
         font-size: 2rem;
-        color: black;
+        color: white;
       }
 
       h3 {
