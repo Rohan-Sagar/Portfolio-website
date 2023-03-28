@@ -82,3 +82,13 @@ body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   transition: 0.3s;
   scale: 1.25;
 }
+
+.Nav {
+  color: white;
+  background-color: #191A20;
+}
+
+.Nav--light {
+  color: black;
+  background-color: white;
+}

@@ -51,14 +51,23 @@ export const Picture = styled.div`
     border-radius: 6px;
   }
 
-  @media (max-width: 1250px){
+  @media (max-width: 765px){
     order: 2;
     width: 50%;
     margin-top: 50px;
     img {
       margin: auto;
+      height: 270px;
     };
   }
+
+  @media (max-width: 711px) {
+    img {
+      height: 230px;
+      margin: -190px 0px 0px 10px;
+    }
+  }
+
 
 `;
 

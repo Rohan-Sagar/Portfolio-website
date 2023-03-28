@@ -53,6 +53,8 @@ export const ClockWrapper = styled.div`
     user-select: none;
     display: flex;
   }
+  
+
 `
 
 export const Info = styled.div`

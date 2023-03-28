@@ -44,7 +44,8 @@ function LandingPage() {
       const eventDate = $('.c-card-event--result__date');
       let eventName = $(eventFighters[0]).text().trim();
       let eventTime = $(eventDate[0]).text().trim();
-      const [firstFighter, secondFighter] = eventName.split(' vs ');
+      const [firstFighter, secondFighterWithNumbers] = eventName.split(' vs ');
+      const secondFighter = secondFighterWithNumbers.replace(/\d+/g, '').trim(); // remove any numbers from the second fighter name
       setEvent({
         eventDate: eventTime,
         fighters: [firstFighter, secondFighter],
@@ -52,6 +53,7 @@ function LandingPage() {
     };
     fetchData();
   }, []);
+  
 
   const handleSelection = choice => {
     if (!selectedChoice) {
@@ -82,7 +84,7 @@ function LandingPage() {
             <SchoolDetails>
               Junior at Purdue University
               <br/>
-              <p>20-05-24 (DD-MM-YY)</p>
+              <p>Graduation Date: 20-05-24 (DD-MM-YY)</p>
             </SchoolDetails>
             <NumberChart>
               <OtherInfo>

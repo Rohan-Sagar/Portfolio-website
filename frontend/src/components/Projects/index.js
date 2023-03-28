@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 function Projects() {
   return (
     <>
-      <Container>
+      <Container id="Projects">
         <br/><br/>
         <h1>Projects</h1>
         <Box>

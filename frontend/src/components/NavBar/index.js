@@ -1,17 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Nav, NavMenu, LeftMenu, Logo, RightMenu } from './styles/Navbar.styles';
 import Dropdown from './swiperDropdown';
+import MenuDropdown from './menuDropdown';
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [isBackgroundDark, setIsBackgroundDark] = useState(true);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const experienceSection = document.getElementById('experience');
+  //     if (experienceSection) {
+  //       setIsBackgroundDark(false);
+  //       const rect = experienceSection.getBoundingClientRect();
+  //       const isTopVisible = rect.top >= 0 && rect.top <= window.innerHeight;
+  //       const isBottomVisible = rect.bottom >= 0 && rect.bottom <= window.innerHeight;
+  //       if (isTopVisible || isBottomVisible) {
+  //         window.location.hash = 'experience';
+  //       }
+  //     }
+  //   };
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
+
   const toggleDropdown = () => setIsOpen(!isOpen);
+  const menuDropdown = () => setShowMenu(!showMenu);
+
 
   return (
     <>
       {isOpen && <Dropdown />}
-      <Nav>
+      {showMenu && <MenuDropdown/>}
+      <Nav isBackgroundDark={isBackgroundDark} className={isBackgroundDark ? '' : 'nav--light'}>
         <NavMenu>
           <LeftMenu>
+            <div className="menu-btn" onClick={menuDropdown}>
+              <span>MENU</span>
+            </div>
             <a href="/">
               <span>HOME</span>
             </a>
@@ -54,4 +81,3 @@ function NavBar() {
 }
 
 export default NavBar
-

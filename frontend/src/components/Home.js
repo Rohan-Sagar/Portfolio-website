@@ -11,8 +11,8 @@ function Home() {
   return (
     <Container>
       <LandingPage/>
-      <Experience/>
-      <Projects/>
+      {/* <Experience/>
+      <Projects/> */}
     </Container>
   )
 }
