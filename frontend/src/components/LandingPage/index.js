@@ -58,25 +58,22 @@ function LandingPage() {
     fighters: [],
   });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const ufcfighter = await axios.get('https://www.ufc.com/events');
-      const $ = cheerio.load(ufcfighter.data);
-      const eventFighters = $('.c-card-event--result__headline');
-      let eventDate = $('.c-card-event--result__date');
-      const eventName = $(eventFighters[0]).text().trim();
-      eventDate = $(eventDate[0]).text().trim();
-      eventDate = moment(eventDate, 'ddd, MMM D / h:mm A z / [Main Card]').format('YYYY-MM-DDTHH:mm:ssZ');
-      const [firstFighter, secondFighterWithNumbers] = eventName.split(' vs ');
-      const secondFighter = secondFighterWithNumbers.replace(/\d+/g, '').trim(); // remove any numbers from the second fighter name
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fetch-event-data');
+      const { eventDate, fighters } = response.data;
       setEvent({
-        eventDate: eventDate,
-        fighters: [firstFighter, secondFighter],
+        eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),
+        fighters,
       });
-    };
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
     fetchData();
   }, []);
-  
 
   const handleSelection = async (color) => {
     setSelectedChoice(color);

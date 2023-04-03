@@ -20,7 +20,24 @@ import moment from 'moment';
 function UFCTimer() {
   const [timeLeft, setTimeLeft] = useState(300);
   const [timeRemaining, setTimeRemaining] = useState('');
-  const event = useContext(EventContext);
+  const [fightEvent, setfightEvent] = useState({ eventDate: '', fighters: [] });
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fetch-event-data');
+      const { eventDate, fighters } = response.data;
+      setfightEvent({
+        eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),
+        fighters,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const countdown = setInterval(() => {
@@ -51,7 +68,7 @@ function UFCTimer() {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      const targetDate = moment(event.eventDate);
+      const targetDate = moment(fightEvent.eventDate);
       const now = moment();
       const diff = targetDate.diff(now);
       const duration = moment.duration(diff);
@@ -62,7 +79,7 @@ function UFCTimer() {
       setTimeRemaining(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
     }, 1000);
     return () => clearInterval(interval);
-  }, [event.eventDate]);
+  }, [fightEvent.eventDate]);
   
 
   return (
@@ -82,7 +99,7 @@ function UFCTimer() {
     <Contestant>
       <Container>
         <TextWrapper>
-            <span>{event.fighters[0]}</span>
+            <span>{fightEvent.fighters[0]}</span>
         </TextWrapper>
         <RedBanner/>
       </Container>
@@ -90,7 +107,7 @@ function UFCTimer() {
     <ContestantTwo>
       <Container>
         <TextWrapper>
-            <span>{event.fighters[1]}</span>
+            <span>{fightEvent.fighters[1]}</span>
         </TextWrapper>
         <BlueBanner/>
       </Container>
