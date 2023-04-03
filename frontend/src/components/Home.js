@@ -20,11 +20,11 @@ function Home() {
 export default Home
 
 const Container = styled.div`
-  @media (max-width: 1250px) {
-    flex-direction: column;
-    height: auto;
-    justify-content: flex-start;
-  }
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  background-color: #191A20;
+
+  @media (max-width: 1250px) {
+    align-items: center;
+  }
 `

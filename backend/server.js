@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cron = require('node-cron');
 require('dotenv').config();
 
 const app = express();
@@ -31,7 +32,6 @@ app.post('/post-votes', async (req, res) => {
   try {
     const newVote = new Votes({
       fighterName: req.body.fighterName,
-      ringSideColor: req.body.ringSideColor
     });
     const savedVote = await newVote.save();
     res.send(newVote);
@@ -49,11 +49,12 @@ app.get('/get-votes', async (req, res) => {
       console.error(err);
       res.status(500).send('Error retrieving votes');
     }
-  });
-  
-
-app.get('/', (req, res) => {
-  res.send("Hello World!");
 });
+
+cron.schedule('0 0 * * 0', async () => {
+  await Votes.deleteMany({});
+  console.log('Collection cleared');
+});
+  
 
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`));

@@ -15,9 +15,11 @@ import {
 } from './UFCTimer.styles';
 import axios from 'axios';
 import EventContext from '../../context/useContext';
+import moment from 'moment';
 
 function UFCTimer() {
   const [timeLeft, setTimeLeft] = useState(300);
+  const [timeRemaining, setTimeRemaining] = useState('');
   const event = useContext(EventContext);
 
   useEffect(() => {
@@ -37,15 +39,31 @@ function UFCTimer() {
       };
     }, []);
 
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
+  let minutes = Math.floor(timeLeft / 60);
+  let seconds = timeLeft % 60;
+
+  if (minutes < 10 && minutes >= 0) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
   
-    if (minutes < 10 && minutes >= 0) {
-      minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-      seconds = "0" + seconds;
-    }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const targetDate = moment(event.eventDate);
+      const now = moment();
+      const diff = targetDate.diff(now);
+      const duration = moment.duration(diff);
+      const days = duration.days();
+      const hours = duration.hours();
+      const minutes = duration.minutes();
+      const seconds = duration.seconds();
+      setTimeRemaining(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [event.eventDate]);
+  
 
   return (
     <>
@@ -78,7 +96,7 @@ function UFCTimer() {
       </Container>
     </ContestantTwo>
   </Timer>
-    <Date>{event.eventDate}</Date>
+    <Date>{timeRemaining}</Date>
   </>
   )}
 

@@ -34,9 +34,9 @@ export const Logo = styled.div`
 
 export const ClockWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 120px;
   height: 100%;
-  span{
+  span {
     opacity: 1;
     visibility: inherit;
     transform: translate(0%, -50%);
@@ -53,8 +53,6 @@ export const ClockWrapper = styled.div`
     user-select: none;
     display: flex;
   }
-  
-
 `
 
 export const Info = styled.div`
@@ -142,6 +140,9 @@ export const TextWrapper = styled.div`
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
+  @media (max-width: 420px) {
+    font-size: 0.5em;
+  }
 `
 
 export const Container = styled.div`
@@ -168,6 +169,7 @@ export const Timer = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
+  margin-top: 55px;
 `
 
 export const Date = styled.span`

@@ -1,24 +1,23 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-    @media (max-width: 1250px) {
-        height: auto;
-        justify-content: flex-start;
-        order: 1;
-    }
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 85%;
-    position: absolute;
-    top: 170%;
-    justify-content: center;
-    align-items: center;
-    h1 {
-        font-size: 3rem;
-        color: white;
-    }
-`
+  @media (max-width: 1250px) {
+    height: auto;
+    justify-content: flex-start;
+    order: 2;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 800px;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+  h1 {
+    font-size: 3rem;
+    color: white;
+  }
+`;
 
 export const Box = styled.div`
     // @media (max-width: 1250px) {

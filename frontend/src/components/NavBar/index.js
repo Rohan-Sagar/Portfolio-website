@@ -8,32 +8,31 @@ function NavBar() {
   const [showMenu, setShowMenu] = useState(false);
   const [isBackgroundDark, setIsBackgroundDark] = useState(true);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const experienceSection = document.getElementById('experience');
-  //     if (experienceSection) {
-  //       setIsBackgroundDark(false);
-  //       const rect = experienceSection.getBoundingClientRect();
-  //       const isTopVisible = rect.top >= 0 && rect.top <= window.innerHeight;
-  //       const isBottomVisible = rect.bottom >= 0 && rect.bottom <= window.innerHeight;
-  //       if (isTopVisible || isBottomVisible) {
-  //         window.location.hash = 'experience';
-  //       }
-  //     }
-  //   };
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
-
   const toggleDropdown = () => setIsOpen(!isOpen);
   const menuDropdown = () => setShowMenu(!showMenu);
 
+  useEffect(() => {
+    const experienceSection = document.getElementById('experience-section');
+    const projectSection = document.getElementById('projects-section');
+    const handleScroll = () => {
+      if (experienceSection.getBoundingClientRect().top <= 0) {
+        setIsBackgroundDark(false);
+        if (projectSection.getBoundingClientRect().top <= 0) {
+          setIsBackgroundDark(true);
+        }
+      } else {
+        setIsBackgroundDark(true);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
       {isOpen && <Dropdown />}
       {showMenu && <MenuDropdown/>}
-      <Nav isBackgroundDark={isBackgroundDark} className={isBackgroundDark ? '' : 'nav--light'}>
+      <Nav isBackgroundDark={isBackgroundDark} className={isBackgroundDark ? '' : 'nav--dark'}>
         <NavMenu>
           <LeftMenu>
             <div className="menu-btn" onClick={menuDropdown}>
@@ -53,9 +52,9 @@ function NavBar() {
             </a>
           </LeftMenu>
 
-          <a href="/">
-            <Logo>RS</Logo>
-          </a>
+          <Logo href="/">
+            <span>RS</span>
+          </Logo>
 
           <RightMenu>
             <a href='https://github.com/rohan-sagar1' target="_blank" rel="noreferrer">
@@ -63,7 +62,7 @@ function NavBar() {
                 <img src="/assets/github-mark.png" alt="github" />
               </span>
             </a>
-            <a href='https://www.linkedin.com/in/rohan-sagar3/' target="_blank" rel="noreferrer">
+            <a className="no-filter" href='https://www.linkedin.com/in/rohan-sagar3/' target="_blank" rel="noreferrer">
               <span>
                 <img src="/assets/LI-In-Bug.png" alt="linkedin"/>
               </span>
@@ -74,6 +73,7 @@ function NavBar() {
               </span>
             </a>
           </RightMenu>
+          
         </NavMenu>
       </Nav>
     </>

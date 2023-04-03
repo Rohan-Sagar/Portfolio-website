@@ -72,7 +72,7 @@ const pages = [
     items: [
       {
         name: "Deployment",
-        technologies: ["AWS", "Heroku", "Netlify", "Vercel"],
+        technologies: ["AWS", "Heroku", "Firebase", "Vercel"],
       },
       {
         name: "Operating Systems",

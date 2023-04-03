@@ -3,8 +3,8 @@ import { Container, Box, Logo, Details } from './Experience.styles';
 
 function Experience() {
     return (
-        <Container id="experience">
-            <h1>Experience</h1>
+        <Container id="experience-section">
+            <h1 id="experience">Experience</h1>
             <Box>
                 <Logo>
                     <img src={"/assets/merck-logo.svg"} alt="Merck Logo"></img>

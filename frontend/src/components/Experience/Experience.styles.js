@@ -1,29 +1,30 @@
 import styled from 'styled-components';
 
 export const Container = styled.main`
-    @media (max-width: 1250px) {
-        height: auto;
-        justify-content: flex-start;
-        order: 1;
-    }
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 85%;
-    position: absolute;
-    top: 90%;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    h1 {
-        font-size: 3rem;
-    }
-`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 700px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 1250px) {
+    height: auto;
+    order: 1;
+  }
+`;
 
 export const Box = styled.div`
-    // @media (max-width: 1250px) {
-    //     flex-wrap: wrap;
-    // }
+    @media (max-width: 1250px) {
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
 
     display: flex;
     flex-direction: column;

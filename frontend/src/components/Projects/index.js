@@ -10,11 +10,10 @@ import "swiper/css/pagination";
 function Projects() {
   return (
     <>
-      <Container id="Projects">
-        <br/><br/>
-        <h1>Projects</h1>
+      <Container id="projects-section">
+        <h1 id="projects">Projects</h1>
         <Box>
-          <Swiper
+          {/* <Swiper
             cssMode={true}
             navigation={true}
             pagination={{ clickable: true }}
@@ -22,7 +21,7 @@ function Projects() {
             keyboard={true}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
             className="mySwiper"
-          >
+          > */}
             {/* <SwiperSlide>
               <div>
                 <h2>Julienne - Slicer Software</h2>
@@ -52,12 +51,12 @@ function Projects() {
                 </li>
               </div>
             </SwiperSlide> */}
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <div>
                 <h2>Candy marketplace</h2>
                 <h3>Full-stack Developer</h3>
                 <h4>Nov 2022 - Nov 2022</h4>
-                <li>Add bullets from Resume</li>
+                <li>Add bullets from Resume</li> */}
                 {/* <li>
                   Developed a website for trick or treat reviewing and candy 
                   marketplace using MERN stack.
@@ -70,7 +69,7 @@ function Projects() {
                   Awarded for having the best authentication system at the 
                   Demon Hacks hackathon. 
                 </li> */}
-              </div>
+              {/* </div>
             </SwiperSlide>
             <SwiperSlide>
               <div>
@@ -84,7 +83,7 @@ function Projects() {
               </div>
               <TerminalUI />
             </SwiperSlide>
-          </Swiper>
+          </Swiper> */}
         </Box>
       </Container>
     </>

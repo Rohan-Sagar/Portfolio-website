@@ -18,9 +18,11 @@ import UFCTimer from '../UFCTimer/index';
 import EventContext from '../../context/useContext';
 import axios from 'axios';
 import cheerio from 'cheerio';
+import moment from 'moment';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 
 let id = 0;
-
 const INITIAL_STATES = [
   { id: id++, label: "Major: Computer Engineering"},
   { id: id++, label: "Minor: Economics"},
@@ -28,9 +30,29 @@ const INITIAL_STATES = [
   { id: id++, label: "Python Developer"}
 ]
 
+ChartJS.register(ArcElement, Tooltip, Legend);
+export const defaultData = {
+  datasets: [
+    {
+      label: '# of Votes',
+      data: [1, 1],
+      backgroundColor: [
+        'rgb(41, 71, 144)',
+        'rgb(143, 2, 14)',
+      ],
+      borderColor: [
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 99, 132, 1)',
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+
 function LandingPage() {
   const [count, setCount] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState("");
+  const [data, setData] = useState(defaultData);
   const [event, setEvent] = useState({
     eventDate: '',
     fighters: [],
@@ -41,13 +63,14 @@ function LandingPage() {
       const ufcfighter = await axios.get('https://www.ufc.com/events');
       const $ = cheerio.load(ufcfighter.data);
       const eventFighters = $('.c-card-event--result__headline');
-      const eventDate = $('.c-card-event--result__date');
-      let eventName = $(eventFighters[0]).text().trim();
-      let eventTime = $(eventDate[0]).text().trim();
+      let eventDate = $('.c-card-event--result__date');
+      const eventName = $(eventFighters[0]).text().trim();
+      eventDate = $(eventDate[0]).text().trim();
+      eventDate = moment(eventDate, 'ddd, MMM D / h:mm A z / [Main Card]').format('YYYY-MM-DDTHH:mm:ssZ');
       const [firstFighter, secondFighterWithNumbers] = eventName.split(' vs ');
       const secondFighter = secondFighterWithNumbers.replace(/\d+/g, '').trim(); // remove any numbers from the second fighter name
       setEvent({
-        eventDate: eventTime,
+        eventDate: eventDate,
         fighters: [firstFighter, secondFighter],
       });
     };
@@ -55,10 +78,39 @@ function LandingPage() {
   }, []);
   
 
-  const handleSelection = choice => {
-    if (!selectedChoice) {
-      setSelectedChoice(choice);
-    }};
+  const handleSelection = async (color) => {
+    setSelectedChoice(color);
+    try {
+      await axios.post('http://localhost:9000/post-votes', {
+        fighterName: event.fighters[color === 'Blue' ? 1 : 0],
+      });
+      const votesResponse = await axios.get('http://localhost:9000/get-votes');
+      const votesData = event.fighters.map(fighter => {
+        const numVotes = votesResponse.data.filter(vote => vote.fighterName === fighter).length;
+        return numVotes;
+      });
+      setData({
+        datasets: [
+          {
+            label: '# of Votes',
+            data: votesData,
+            backgroundColor: [
+              'rgb(143, 2, 14)',
+              'rgb(41, 71, 144)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
 
   useEffect(() => {
     let interval = null;
@@ -71,8 +123,7 @@ function LandingPage() {
   }, [count]);
 
   return (
-    <>
-      <Container>
+      <Container id="home">
         <Landing>
           <LeftMenu>
             <TagWrapper>
@@ -114,21 +165,29 @@ function LandingPage() {
             <EventContext.Provider value={event}>
               <UFCTimer/>
             </EventContext.Provider>
+            {selectedChoice ? (
+              <div className="doughnut-container">
+                <Doughnut 
+                  data={data}
+                  height="200px"
+                  width="200px"
+                  options={{ maintainAspectRatio: false }}
+                />
+              </div>
+            ) : (
               <UserSelect>
                 <span>What are your picks for the fight?</span>
                 <RedOption onClick={() => handleSelection("Red")}>
                   <p>{event.fighters[0]}</p>
-                  {selectedChoice === "Red"}
                 </RedOption>
                 <BlueOption onClick={() => handleSelection("Blue")}>
                   <p>{event.fighters[1]}</p>
-                  {selectedChoice === "Blue"}
                 </BlueOption>
               </UserSelect>
+            )}
           </RightMenu>
         </Landing>
       </Container>
-    </>
   )
 }
 

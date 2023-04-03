@@ -9,8 +9,7 @@ export const Container = styled.main`
 
   display: flex;
   width: 100%;
-  height: 85%;
-  position: absolute;
+  height: 800px;
   background-color: #191A20;
 `;
 
@@ -46,20 +45,26 @@ export const Picture = styled.div`
   height: 100%;
   display: flex;
   img {
-    height: 320px;
-    margin: 120px 0px 0px 100px;
+    height: 350px;
+    margin: 193px 0px 0px 100px;
     border-radius: 6px;
   }
 
-  @media (max-width: 765px){
+  @media (max-width: 1250px){
     order: 2;
     width: 50%;
     margin-top: 50px;
     img {
       margin: auto;
-      height: 270px;
     };
   }
+
+  @media (max-width: 920px) {
+    img {
+      height: 300px;
+    }
+  }
+
 
   @media (max-width: 711px) {
     img {
@@ -67,8 +72,6 @@ export const Picture = styled.div`
       margin: -190px 0px 0px 10px;
     }
   }
-
-
 `;
 
 export const RightMenu = styled.div`
@@ -83,8 +86,7 @@ export const RightMenu = styled.div`
   @media (max-width: 1250px){
     order: 3;
     width: 100%;
-    margin-top: 20%;
-
+    margin-bottom: 50px;
   }
 `
 
@@ -102,6 +104,9 @@ export const Tag = styled.p`
   border-radius: 3px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
+  @media (max-width: 475px) {
+    font-size: 9px;
+  }
 `;
 
 export const Name = styled.span`
