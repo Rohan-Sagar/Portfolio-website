@@ -24,7 +24,7 @@ function UFCTimer() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info', { withCredentials: true });
+      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info');
       const { eventDate, fighters } = response.data;
       setfightEvent({
         eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),

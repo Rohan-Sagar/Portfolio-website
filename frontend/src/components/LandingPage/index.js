@@ -60,7 +60,7 @@ function LandingPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info', { withCredentials: true });
+      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info');
       const { eventDate, fighters } = response.data;
       setEvent({
         eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),
@@ -80,8 +80,8 @@ function LandingPage() {
     try {
       await axios.post('https://portfolio-website-backend-iejc.onrender.com/post-votes', {
         fighterName: event.fighters[color === 'Blue' ? 1 : 0],
-      }, { withCredentials: true });
-      const votesResponse = await axios.get('https://portfolio-website-backend-iejc.onrender.com/get-votes', { withCredentials: true });
+      });
+      const votesResponse = await axios.get('https://portfolio-website-backend-iejc.onrender.com/get-votes');
       const votesData = event.fighters.map(fighter => {
         const numVotes = votesResponse.data.filter(vote => vote.fighterName === fighter).length;
         return numVotes;
