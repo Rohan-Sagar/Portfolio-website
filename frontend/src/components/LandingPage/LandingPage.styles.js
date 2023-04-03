@@ -106,6 +106,7 @@ export const Tag = styled.p`
   white-space: nowrap;
   @media (max-width: 475px) {
     font-size: 9px;
+    right: 12px;
   }
 `;
 

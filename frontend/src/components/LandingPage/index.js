@@ -81,10 +81,10 @@ function LandingPage() {
   const handleSelection = async (color) => {
     setSelectedChoice(color);
     try {
-      await axios.post('http://localhost:9000/post-votes', {
+      await axios.post('https://portfolio-website-backend-iejc.onrender.com/post-votes', {
         fighterName: event.fighters[color === 'Blue' ? 1 : 0],
       });
-      const votesResponse = await axios.get('http://localhost:9000/get-votes');
+      const votesResponse = await axios.get('https://portfolio-website-backend-iejc.onrender.com/get-votes');
       const votesData = event.fighters.map(fighter => {
         const numVotes = votesResponse.data.filter(vote => vote.fighterName === fighter).length;
         return numVotes;

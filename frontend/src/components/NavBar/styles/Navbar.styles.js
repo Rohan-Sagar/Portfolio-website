@@ -201,6 +201,10 @@ export const Logo = styled.a`
     right: 40px;
     position: relative;
   }
+
+  @media (max-width: 400px) {
+    right: 20px;
+  }
 }`;
 
 export const DropdownTable = styled.div`
