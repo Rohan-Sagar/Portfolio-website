@@ -60,7 +60,7 @@ function LandingPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fetch-event-data');
+      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info');
       const { eventDate, fighters } = response.data;
       setEvent({
         eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),
