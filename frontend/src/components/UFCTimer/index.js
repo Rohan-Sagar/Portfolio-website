@@ -68,7 +68,7 @@ function UFCTimer() {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      const targetDate = moment(fightEvent.eventDate);
+      const targetDate = moment(fightEvent.eventDate || "2023-04-08T22:00:00-04:00");
       const now = moment();
       const diff = targetDate.diff(now);
       const duration = moment.duration(diff);
@@ -86,9 +86,9 @@ function UFCTimer() {
     <>
     <Timer>
       <Clock>
-        {/* <Info>
-          <span>Bantamweight Bout</span>
-        </Info> */}
+        <Info>
+          <span>Middleweight Bout</span>
+        </Info>
         <ClockWrapper>
           <Logo>
             <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
@@ -99,7 +99,7 @@ function UFCTimer() {
     <Contestant>
       <Container>
         <TextWrapper>
-            <span>{fightEvent.fighters[0]}</span>
+          {fightEvent.fighters[0] ? <span>{fightEvent.fighters[0]}</span> : "Pereira"}
         </TextWrapper>
         <RedBanner/>
       </Container>
@@ -107,7 +107,7 @@ function UFCTimer() {
     <ContestantTwo>
       <Container>
         <TextWrapper>
-            <span>{fightEvent.fighters[1]}</span>
+          {fightEvent.fighters[1] ? <span>{fightEvent.fighters[1]}</span> : "Adesanya"}
         </TextWrapper>
         <BlueBanner/>
       </Container>
