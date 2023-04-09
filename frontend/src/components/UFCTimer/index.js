@@ -78,7 +78,7 @@ function UFCTimer() {
   }, [roundNumber, maxRounds, roundTime]);
 
   useEffect(() => {
-    const targetDate = moment(event.eventDate || "2023-04-08T22:00:00-04:00");
+    const targetDate = moment(event.eventDate);
     if (targetDate.isBefore(moment())) {
       setTimeRemaining("IT'S TIME FOR WAR!");
       return;
