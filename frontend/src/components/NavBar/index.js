@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import { Nav, NavMenu, LeftMenu, Logo, RightMenu } from './styles/Navbar.styles';
-import Dropdown from './swiperDropdown';
+import SwiperDropdown from './swiperDropdown';
 import MenuDropdown from './menuDropdown';
 
 function NavBar() {
@@ -15,13 +16,16 @@ function NavBar() {
     const experienceSection = document.getElementById('experience-section');
     const projectSection = document.getElementById('projects-section');
     const handleScroll = () => {
-      if (experienceSection.getBoundingClientRect().top <= 0) {
-        setIsBackgroundDark(false);
-        if (projectSection.getBoundingClientRect().top <= 0) {
+      if (experienceSection && projectSection) {
+        if (experienceSection.getBoundingClientRect().top - 60 <= 0) {
+          setIsBackgroundDark(false);
+          console.log('experience');
+          if (projectSection.getBoundingClientRect().top - 60 <= 0) {
+            setIsBackgroundDark(true);
+          }
+        } else {
           setIsBackgroundDark(true);
         }
-      } else {
-        setIsBackgroundDark(true);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -30,18 +34,18 @@ function NavBar() {
 
   return (
     <>
-      {isOpen && <Dropdown />}
       {showMenu && <MenuDropdown/>}
       <Nav isBackgroundDark={isBackgroundDark} className={isBackgroundDark ? '' : 'nav--dark'}>
         <NavMenu>
           <LeftMenu>
             <div className="menu-btn" onClick={menuDropdown}>
               <span>MENU</span>
+              <img src={'/assets/down-arrow.png'} alt="menu" />
             </div>
             <a href="/">
               <span>HOME</span>
             </a>
-            <a onClick={toggleDropdown}>
+            <a className="skills-btn" onClick={toggleDropdown}>
               <span>SKILLS</span>
             </a>
             <a href="#experience">
@@ -73,9 +77,9 @@ function NavBar() {
               </span>
             </a>
           </RightMenu>
-          
         </NavMenu>
       </Nav>
+      {isOpen && <SwiperDropdown />}
     </>
   )
 }

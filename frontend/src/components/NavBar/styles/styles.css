@@ -15,42 +15,56 @@ body .swiper-slide {
 }
 
 .swiper {
-  position: absolute;
-  background-color: white !important;
+  position: relative;
+  background-color: #2A2C36 !important;
   width: 50%;
   border: 1px solid;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 7px 7px;
   font-family: "Poppins", sans-serif;
+  opacity: 0;
+  animation: slide-down 0.5s ease-out 0s forwards;
+  transform-origin: top;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 @media (min-width: 1024px) {
   .swiper {
-    top: 100px;
-    left: 180px;
+    top: 120px;
+    right: 220px;
   }
 }
 
 @media (max-width: 1023px) {
   .swiper {
     width: 100%;
-    top: 100px;
+    right: 180px;
   }
 }
 
 .swiper h2 {
   font-size: 13px;
-  color: grey;
+  color: #BDBDBD;
   margin-bottom: -3px;
 }
 
 .swiper thead {
   font-size: 13px;
-  color: grey;
+  color: #BDBDBD;
 }
 
 .swiper td {
   font-size: 14px;
-  color: black;
+  color: #BDBDBD;
   font-style: normal;
 
 }
@@ -78,7 +92,7 @@ body .swiper-horizontal > .swiper-pagination-bullets {
 }
 
 body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-  background: #6c63ff;
+  background: white;
   transition: 0.3s;
   scale: 1.25;
 }
@@ -86,6 +100,7 @@ body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
 .Nav {
   color: white;
   background-color: #191A20;
+  position: relative;
 }
 
 .Nav--light {

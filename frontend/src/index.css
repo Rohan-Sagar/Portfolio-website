@@ -1,10 +1,19 @@
 
 @font-face {
-  font-family: 'UfcFont';
+  font-family: 'UfcSecondaryFont';
   src: url("/public/Share/Share-Bold.ttf");
   src: url("/public/Share/Share-BoldItalic.ttf");
   src: url("/public/Share/Share-Italic.ttf");
   src: url("/public/Share/Share-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'UfcFont';
+  src: url("/public/Teko/Teko-Bold.ttf");
+  src: url("/public/Teko/Teko-Light.ttf");
+  src: url("/public/Teko/Teko-Medium.ttf");
+  src: url("/public/Teko/Teko-Regular.ttf");
+  src: url("/public/Teko/Teko-SemiBold.ttf");
 }
 
 @font-face {
@@ -16,7 +25,7 @@
 body {
   margin: 0;
   background-color: #191A20 !important;
-  font-weight: 900;
+  font-weight: 500;
   font-family: 'UfcFont', sans-serif;
   color: #191919;
   -webkit-font-smoothing: antialiased;

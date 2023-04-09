@@ -90,7 +90,7 @@ const pages = [
   },
 ];
 
-function Dropdown() {
+function SwiperDropdown() {
   return (
     <Swiper
     modules={[Pagination]}
@@ -239,5 +239,5 @@ function Dropdown() {
   </Swiper>    
 )}
 
-export default Dropdown;
+export default SwiperDropdown;
 

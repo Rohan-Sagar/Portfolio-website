@@ -1,18 +1,22 @@
-import React, { Suspense, lazy} from 'react';
+import React, { lazy, Suspense } from 'react';
 import styled from 'styled-components';
-import LandingPage from './LandingPage/index';
-import Projects from './Projects/index';
-import TerminalUI from './TerminalUI/index';
-import Experience from './Experience/index';
 
-// const HomePage = React.lazy(() => LandingPage);
+const LandingPage = lazy(() => import('./LandingPage'));
+const Experience = lazy(() => import('./Experience'));
+const Projects = lazy(() => import('./Projects'));
 
 function Home() {
   return (
     <Container>
-      <LandingPage/>
-      <Experience/>
-      <Projects/>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LandingPage />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Experience />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Projects />
+      </Suspense>
     </Container>
   )
 }

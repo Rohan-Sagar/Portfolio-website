@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  @media (max-width: 1250px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
     height: auto;
     justify-content: flex-start;
@@ -14,8 +14,9 @@ export const Container = styled.main`
 `;
 
 export const Landing = styled.div`
-  @media (max-width: 1250px) {
+  @media (max-width: 1000px) {
     flex-wrap: wrap;
+    margin: 100px auto 0;
   }
   display: flex;
   flex-direction: row;
@@ -24,52 +25,52 @@ export const Landing = styled.div`
   justify-content: space-between;
   margin: 150px auto 0;
   align-items: center;
+
+  // @media (max-width: 500px) {
+  //   margin: 100px -10px auto;
+  // }
 `
 
 export const LeftMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  flex-shrink: 0;
   height: 100%;
-  width: 33.3%;
+  width: 33%;
   gap: 20px;
+  // background: yellow;
 
-  @media (max-width: 1250px) {
-    order: 1;
+  @media (max-width: 1000px) {
+    order: 2;
     width: 50%;
+    gap: 0px;
   }
 `;
 
 export const Picture = styled.div`
-  width: 33.3%;
+  width: 29%;
   height: 100%;
   display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+
   img {
-    height: 350px;
-    margin: 193px 0px 0px 100px;
+    max-height: 300px;
+    max-width: 100%;
     border-radius: 6px;
+    margin-top: 90px;
   }
 
-  @media (max-width: 1250px){
-    order: 2;
+  @media (max-width: 1000px){
+    order: 1;
     width: 50%;
-    margin-top: 50px;
-    img {
-      margin: auto;
-    };
   }
 
-  @media (max-width: 920px) {
+  @media (max-width: 500px){
     img {
-      height: 300px;
-    }
-  }
-
-
-  @media (max-width: 711px) {
-    img {
-      height: 230px;
-      margin: -190px 0px 0px 10px;
+      max-height: 150px;
     }
   }
 `;
@@ -77,13 +78,13 @@ export const Picture = styled.div`
 export const RightMenu = styled.div`
   display: flex;
   flex-direction: column;
-  width: 33.3%;
+  width: 38%;
+  flex-shrink: 0;
   height: 100%;
   gap: 20px;
   justify-content: center;
-  margin-top: 30px;
 
-  @media (max-width: 1250px){
+  @media (max-width: 1000px){
     order: 3;
     width: 100%;
     margin-bottom: 50px;
@@ -92,7 +93,8 @@ export const RightMenu = styled.div`
 
 export const TagWrapper = styled.div`
   display: flex;
-  // margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 `
 
 export const Tag = styled.p`
@@ -100,13 +102,17 @@ export const Tag = styled.p`
   padding: 2px 5px;
   color: white;
   background-color: #424247;
+  font-family: 'Poppins', sans-serif;
   margin-right: 5px;
+  margin-bottom: 5px;
   border-radius: 3px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
-  @media (max-width: 475px) {
+  @media (max-width: 768px) {
+    margin-bottom: 5px;
+  }
+  @media (max-width: 500px) {
     font-size: 9px;
-    right: 12px;
   }
 `;
 
@@ -114,9 +120,13 @@ export const Name = styled.span`
   color: white;
   font-size: 60px;
 
-  // @media (max-width: 768px) {
-  //   font-size: 36px;
-  // }
+  @media (max-width: 1000px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 30px;
+  }
 `;
 
 export const SchoolDetails = styled.span`
@@ -128,22 +138,28 @@ export const SchoolDetails = styled.span`
     margin: 0;
   }
 
-  // @media (max-width: 768px) {
-  //   font-size: 14px;
-  // }
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+    p {
+      font-size: 10px;
+    }
+  }
 `;
 
 export const OtherInfo = styled.div`
   color: white;
   align-items: center;
-  // height: 70%;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   text-align: center;
 
   h1 {
     font-size: 54px;
+    font-family: 'UfcSecondaryFont';
     border-bottom: 2px solid red;
     width: 60px;
     padding-bottom: 5px;
@@ -153,14 +169,25 @@ export const OtherInfo = styled.div`
     font-size: 14px;
   }
 
-  // @media (max-width: 768px) {
-  // h1 {
-  //   font-size: 36px;
-  // }
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 40px;
+      width: 40px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
 
-  // span {
-  //   font-size: 12px;
-  // }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 20px;
+      width: 20px;
+    }
+    span {
+      font-size: 10px;
+    }
+  }
 }`;
 
 export const NumberChart = styled.div`
@@ -171,22 +198,28 @@ export const NumberChart = styled.div`
   gap: 30px;
   label {
     border-right: 2px solid #3F3F3F;
-  // }
+  }
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `
 
 export const UserSelect = styled.div`
-  // background-color: blue;
   display: flex;
   flex-direction: column;
   text-align: center;
-  // margin-top: 20px;
-  // margin-left: 120px;
   gap: 20px;
-  // justify-content: center;
   color: white;
 
   span {
     font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 14px;
+    }
   }
 `
 
@@ -194,7 +227,7 @@ export const RedOption = styled.div`
   width: 150px;
   margin: auto;
   background-color: rgb(143, 2, 14);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   font-family: "Share Tech Mono", monospace;
   letter-spacing: 2px;
@@ -219,7 +252,13 @@ export const RedOption = styled.div`
   // &:active::before {
   //   background-color: rgba(0, 0, 0, 0.4);
   // }
-  `;
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 12px;
+    }
+  }
+`;
 
 export const BlueOption = styled(RedOption)`
   background-color: rgb(41, 71, 144) !important;

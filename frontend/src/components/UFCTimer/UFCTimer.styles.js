@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 
+export const Timer = styled.div`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 55px;
+  
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
+`
+
 export const Clock = styled.div`
-  z-index: 1;
   box-sizing: border-box;
-  width: 400px;
+  width: 100%;
   height: 100%;
   padding: 0 1.5em;
   background-image: linear-gradient(180deg,#363636,#2b2b2b);
@@ -11,21 +21,26 @@ export const Clock = styled.div`
   transform: translate(0px, 0%);
   height: 100%;
   display: flex;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 0 1em;
+  }
+
 `
 
 export const Logo = styled.div`
-  width: 69px;
+  width: 70px;
   transform: translate(0%, -50%);
   left: 0px;
   position: absolute;
   top: 50%;
-  z-index: 1;
   display: flex;
   justify-content: center;
   overflow: hidden;
   img {
     transform: translate(-15px, 0%);
-    width: 3.3em;
+    width: 3em;
     height: 100%;
     transition: fill .3s ease;
     filter: invert(100%);
@@ -33,27 +48,53 @@ export const Logo = styled.div`
 `
 
 export const ClockWrapper = styled.div`
-  position: relative;
-  width: 120px;
+  position: fixed;
+  width: 150px;
   height: 100%;
   span {
     opacity: 1;
     visibility: inherit;
     transform: translate(0%, -50%);
     position: absolute;
-    right: 0;
+    right: 40px;
     top: 50%;
     display: flex;
     align-items: center;
     margin-left: 0.4em;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: 'Hanken Grotesk', sans-serif;
     font-family: 'Quantico', sans-serif;
     user-select: none;
+    font-weight: 600;
     display: flex;
   }
 `
+
+export const Rounds = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+export const RoundBar = styled.div`
+  height: 20px;
+  width: 3px;
+  background-color: ${props => props.color ? props.color : '#727272'};
+  margin-right: 5px;
+`;
+
+export const RoundBarSquare = styled(RoundBar)`
+  width: 20px;
+  text-align: center;
+  background-color: #D4AF37;
+`;
 
 export const Info = styled.div`
   transform: translate(-50%, 0%);
@@ -116,7 +157,7 @@ export const Contestant = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
+  width: 400px;
 `
 
 export const ContestantTwo = styled(Contestant)`
@@ -163,13 +204,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-`
-
-export const Timer = styled.div`
-  height: 40px;
-  display: flex;
-  align-items: center;
-  margin-top: 55px;
 `
 
 export const Date = styled.span`

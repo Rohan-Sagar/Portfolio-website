@@ -13,12 +13,12 @@ import {
   RightMenu,
   UserSelect,
   RedOption,
-  BlueOption } from './LandingPage.styles';
+  BlueOption 
+} from './LandingPage.styles';
 import UFCTimer from '../UFCTimer/index';
 import EventContext from '../../context/useContext';
 import axios from 'axios';
 import cheerio from 'cheerio';
-import moment from 'moment';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -58,20 +58,20 @@ function LandingPage() {
     fighters: [],
   });
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info');
-      const { eventDate, fighters } = response.data;
-      setEvent({
-        eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),
-        fighters,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      const ufcfighter = await axios.get('https://www.ufc.com/events');
+      const $ = cheerio.load(ufcfighter.data);
+      const eventFighters = $('.c-card-event--result__headline');
+      const eventDate = $('.c-card-event--result__date');
+      let eventName = $(eventFighters[0]).text().trim();
+      let eventTime = $(eventDate[0]).text().trim();
+      const [firstFighter, secondFighter] = eventName.split(' vs ');
+      setEvent({
+        eventDate: eventTime,
+        fighters: [firstFighter, secondFighter],
+      });
+    };
     fetchData();
   }, []);
 

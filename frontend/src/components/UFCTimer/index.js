@@ -3,7 +3,9 @@ import {
   Clock,
   Logo,
   ClockWrapper,
-  Info,
+  Rounds,
+  RoundBar,
+  RoundBarSquare,
   RedBanner,
   BlueBanner,
   Contestant,
@@ -13,62 +15,76 @@ import {
   Timer,
   Date,
 } from './UFCTimer.styles';
-import axios from 'axios';
-import EventContext from '../../context/useContext';
 import moment from 'moment';
+import EventContext from '../../context/useContext';
 
 function UFCTimer() {
-  const [timeLeft, setTimeLeft] = useState(300);
   const [timeRemaining, setTimeRemaining] = useState('');
-  const [fightEvent, setfightEvent] = useState({ eventDate: '', fighters: [] });
+  const [timeLeft, setTimeLeft] = useState(300);
+  const [roundNumber, setRoundNumber] = useState(1);
+  const event = useContext(EventContext);
+  
+  const roundTime = 300;
+  const maxRounds = 5;
+  
+  let minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
+  let seconds = (timeLeft % 60).toString().padStart(2, " ").replace(" ", "0");
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://portfolio-website-backend-iejc.onrender.com/fighter-info');
-      const { eventDate, fighters } = response.data;
-      setfightEvent({
-        eventDate: moment(eventDate).format('YYYY-MM-DDTHH:mm:ssZ'),
-        fighters,
-      });
-    } catch (error) {
-      console.error(error);
+  const getRoundBarShape = (index) => {
+    const round = roundNumber + index;
+    if (round === roundNumber) {
+      return 'square';
+    } else {
+      return 'vertical';
     }
+  };
+  
+  const renderRoundBar = () => {
+    const roundBars = [];
+  
+    for (let i = 1; i <= maxRounds; i++) {
+      const shape = getRoundBarShape(i - roundNumber);
+      if (shape === 'square') {
+        roundBars.push(<RoundBarSquare key={i}>R{i}</RoundBarSquare>);
+      } else {
+        const color = i <= roundNumber ? '#D4AF37' : '#727272';
+        roundBars.push(<RoundBar key={i} shape='vertical' color={color}></RoundBar>);
+      }
+    }
+    return roundBars;
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     const countdown = setInterval(() => {
-      setTimeLeft(timeLeft => {
+      setTimeLeft((timeLeft) => {
         if (timeLeft === 0) {
           clearInterval(countdown);
-          return 300;
+          if (roundNumber === maxRounds) {
+            return 0;
+          } else {
+            setRoundNumber(roundNumber + 1);
+            setTimeLeft(roundTime);
+            return roundTime;
+          }
         } else {
           return timeLeft - 1;
         }
       });
     }, 1000);
-
-    return () => {
-        clearInterval(countdown);
-      };
-    }, []);
-
-  let minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
-
-  if (minutes < 10 && minutes >= 0) {
-    minutes = "0" + minutes;
-  }
-  if (seconds < 10) {
-    seconds = "0" + seconds;
-  }
   
+    return () => {
+      clearInterval(countdown);
+    };
+  }, [roundNumber, maxRounds, roundTime]);
+
   useEffect(() => {
+    const targetDate = moment(event.eventDate || "2023-04-08T22:00:00-04:00");
+    if (targetDate.isBefore(moment())) {
+      setTimeRemaining("IT'S TIME FOR WAR!");
+      return;
+    }
+
     const interval = setInterval(() => {
-      const targetDate = moment(fightEvent.eventDate || "2023-04-08T22:00:00-04:00");
       const now = moment();
       const diff = targetDate.diff(now);
       const duration = moment.duration(diff);
@@ -76,30 +92,37 @@ function UFCTimer() {
       const hours = duration.hours();
       const minutes = duration.minutes();
       const seconds = duration.seconds();
-      setTimeRemaining(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+      if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+        setTimeRemaining("IT'S TIME FOR WAR");
+        clearInterval(interval);
+      } else {
+        setTimeRemaining(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+      }
     }, 1000);
     return () => clearInterval(interval);
-  }, [fightEvent.eventDate]);
-  
+  }, [event.eventDate]);
+
 
   return (
     <>
     <Timer>
+
       <Clock>
-        <Info>
-          <span>Middleweight Bout</span>
-        </Info>
         <ClockWrapper>
           <Logo>
             <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
           </Logo>
           <span>{minutes}:{seconds}</span>
+          <Rounds>
+            {renderRoundBar(0)}
+          </Rounds>
         </ClockWrapper>
       </Clock>
+
     <Contestant>
       <Container>
         <TextWrapper>
-          {fightEvent.fighters[0] ? <span>{fightEvent.fighters[0]}</span> : "Pereira"}
+          <span>{event.fighters[0]}</span>
         </TextWrapper>
         <RedBanner/>
       </Container>
@@ -107,7 +130,7 @@ function UFCTimer() {
     <ContestantTwo>
       <Container>
         <TextWrapper>
-          {fightEvent.fighters[1] ? <span>{fightEvent.fighters[1]}</span> : "Adesanya"}
+          <span>{event.fighters[1]}</span>
         </TextWrapper>
         <BlueBanner/>
       </Container>

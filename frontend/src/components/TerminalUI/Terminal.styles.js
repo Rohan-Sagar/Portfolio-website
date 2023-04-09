@@ -34,7 +34,7 @@ export const NavBar = styled.div`
     font-family: 'Arial', sans-serif;
     display: flex;
     height: 40px;
-    width: 80%;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     background-color: #3D3D3D;
@@ -43,7 +43,7 @@ export const NavBar = styled.div`
 
     h4 {
         left: 40%;
-        top: 20%;
+        top: 6%;
         position: absolute;
         color: white !important;
     }
@@ -51,7 +51,7 @@ export const NavBar = styled.div`
 
 export const StyledCodeEditor = styled.div`
   height: 100%;
-  width: 80%;
+  width: 100%;
   border: none;
   display: flex;
   align-items: center;

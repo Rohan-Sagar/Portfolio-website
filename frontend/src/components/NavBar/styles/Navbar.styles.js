@@ -4,33 +4,66 @@ export const Nav = styled.nav`
   position: fixed;
   top: 7%;
   left: 2.5%;
-  height: 65px;
+  height: 0;
   border-radius: 1px;
-  width: 95%;
+  width: 0;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 36px;
-  z-index: 1;
-  @media (max-width: 768px) {
+  z-index: 2;
+  overflow: hidden;
+  animation-name: slideDown;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+
+  @media (max-width: 1000px) {
     width: 100%;
     padding: 0;
+    top: 0;
     left: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   &.nav--dark {
     background-color: #191A20;
+
     a {
       color: white;
     }
+
     a:not(.no-filter) img {
       filter: invert(100%) !important;
     }
+
+    .menu-btn {
+      filter: invert(100%) !important;
+    }
+  }
+
+  @keyframes slideDown {
+    0% {
+      width: 0;
+      height: 5px;
+    }
+    50% {
+      width: 95%;
+      height: 5px;
+    }
+    100% {
+      height: 65px;
+      width: 95%;
+    }
   }
 `;
+
+
+
 
 export const NavMenu = styled.div`
   display: flex;
@@ -56,7 +89,7 @@ export const NavMenu = styled.div`
         background-color: red;
         color: red;
         border-radius: 0px 0px 4px 4px;
-        bottom: -30px;
+        top: 36px;
         content: "";
         height: 2px;
         left: 0px;
@@ -79,7 +112,8 @@ export const NavMenu = styled.div`
       }
     }
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 1000px) {
     width: 100%;
     margin-top: 0;
     justify-content: space-around;
@@ -93,7 +127,7 @@ export const LeftMenu = styled.div`
   .menu-btn {
     display: none;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     order: 2;
     a {
       display: none;
@@ -103,10 +137,11 @@ export const LeftMenu = styled.div`
       align-items: center;
       cursor: pointer;
       color: black;
+      flex-direction: row;
       span {
         display: flex;
         position: relative;
-        right: 20px;
+        right: -20px;
         font-size: 1.11111rem;
         white-space: nowrap;
         &:before {
@@ -121,13 +156,13 @@ export const LeftMenu = styled.div`
           opacity: 1 !important;
         }
       }
-    }
-  }
-
-  @media (max-width: 480px) {
-    .menu-btn {
-      span {
+      img {
+        display: flex;
+        height: 10px;
+        width: 10px;
+        filter: invert(0);
         right: -30px;
+        position: relative;
       }
     }
   }
@@ -141,19 +176,16 @@ export const RightMenu = styled.div`
     height: 25px;
     margin-right: 12px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     position: relative;
     order: 3;
-    right: 45px;
+    right: 0;
     align-items: flex-end;
     justify-content: flex-end;
     img {
       padding: 0;
       margin-right: 0;
     }
-  }
-  @media (max-width: 480px) {
-    right: -30px;
   }
 `;
 
@@ -170,7 +202,7 @@ export const Logo = styled.a`
       background-color: red;
       color: red;
       border-radius: 0px 0px 4px 4px;
-      bottom: -20px !important;
+      top: 36px;
       content: "";
       height: 2px;
       left: 0px;
@@ -192,7 +224,7 @@ export const Logo = styled.a`
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     order: 1;
     align-items: flex-start;
     justify-content: flex-start;
@@ -224,10 +256,11 @@ export const DropdownTable = styled.div`
     white-space: nowrap;
   }
   .grid-container h4 {
-    color: grey;
+    color: #BDBDBD;
     font-size: 12px;
   }
   .grid-container ul {
+    color: white;
     list-style-type: none;
     font-size: 13px;
     padding: 0px;

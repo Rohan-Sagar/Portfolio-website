@@ -30,6 +30,7 @@ export const Box = styled.div`
     flex-direction: column;
     width: 90%;
     height: 75%;
+    font-family: 'Poppins', sans-serif;
 `
 
 export const Logo = styled.div`
