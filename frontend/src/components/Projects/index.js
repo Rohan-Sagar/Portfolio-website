@@ -63,7 +63,6 @@ function Projects() {
                   <h2>Candy marketplace</h2>
                   <h3>Full-stack Developer</h3>
                   <h4>Nov 2022 - Nov 2022</h4>
-                  <li>Add bullets from Resume</li>
                   <li>
                     Developed a website for trick or treat reviewing and candy 
                     marketplace using MERN stack.
