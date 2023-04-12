@@ -83,6 +83,9 @@ export const RightMenu = styled.div`
   height: 100%;
   gap: 20px;
   justify-content: center;
+  h1 {
+    color: white !important;
+  }
 
   @media (max-width: 1000px){
     order: 3;
