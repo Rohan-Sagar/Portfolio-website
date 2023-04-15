@@ -4,33 +4,12 @@ import { Nav, NavMenu, LeftMenu, Logo, RightMenu } from './styles/Navbar.styles'
 import SwiperDropdown from './swiperDropdown';
 import MenuDropdown from './menuDropdown';
 
-function NavBar() {
+function NavBar({ isBackgroundDark }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [isBackgroundDark, setIsBackgroundDark] = useState(true);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const menuDropdown = () => setShowMenu(!showMenu);
-  const experienceSection = document.getElementById('experience-section');
-  const projectSection = document.getElementById('projects-section');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (experienceSection && projectSection) {
-        if (experienceSection.getBoundingClientRect().top - 60 <= 0) {
-          setIsBackgroundDark(false);
-          if (projectSection.getBoundingClientRect().top - 60 <= 0) {
-            setIsBackgroundDark(true);
-          }
-        } else {
-          setIsBackgroundDark(true);
-        }
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       {showMenu && <MenuDropdown/>}
