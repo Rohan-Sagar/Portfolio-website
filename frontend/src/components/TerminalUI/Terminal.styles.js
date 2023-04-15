@@ -22,9 +22,9 @@ export const GreenCircle = styled(Circle)`
 
 export const StyledIDEContainer = styled.div`
   display: flex;
-  height: 70%;
+  height: 100%;
   flex-direction: column;
-  width: 20%;
+  width: 50%;
   position: absolute;
   border-radius: 6px;
   background-color: #191A20;
@@ -43,7 +43,7 @@ export const NavBar = styled.div`
 
     h4 {
         left: 40%;
-        top: 6%;
+        top: 2%;
         position: absolute;
         color: white !important;
     }
@@ -68,12 +68,17 @@ export const StyledCodeEditor = styled.div`
 
 
 export const TextEditor = styled.div`
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    border-radius: 0 0 6px 0;
-    font-family: "Fira Code", monospace;
-    font-size: 12px;
-    padding: 10px;
-`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 0 0 6px 0;
+  font-family: "Fira Code", monospace;
+  font-size: 12px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+`;

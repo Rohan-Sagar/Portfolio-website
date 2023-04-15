@@ -6,58 +6,83 @@ import {
   StyledIDEContainer,
   NavBar,
   StyledCodeEditor,
-  LineNumber,
   TextEditor,
 } from './Terminal.styles'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { tomorrowNight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function TerminalUI() {
-    const [script, setScript] = useState('');
-
-    useEffect(() => {
-      const initialScript = `
-      import os
-      import requests
+    const initialScript = `
+      import pandas as pd
+      import numpy as np
+      import matplotlib.pyplot as plt
       
-      def trade_btc(username, password):
-          btc_spot = yf.download("BTC-USD", start = "2015-01-01", end = "2023-02-15")
-          ma_50_days = btc['Close'].rolling(window=50).mean().iloc[-1]
+      df = pd.read_csv('technology_stocks.csv')
       
-          if not platform_login(username, password):
-              print('Login failed')
-              return
+      df['P/E'] = df['price'] / df['earnings']
+      df['P/B'] = df['price'] / df['book_value']
+      df['ROE'] = df['earnings'] / df['equity']
       
-          balance = get_balance()
-          print(f'Current account balance: {balance:.2f}')
+      plt.plot(df['P/E'], label='P/E')
+      plt.plot(df['P/B'], label='P/B')
+      plt.plot(df['ROE'], label='ROE')
+      plt.legend()
+      plt.show()
       
-          trade_amount = balance * 0.2 
-          if trade_amount > 0:
-              print(f'Trade amount: {trade_amount:.2f}')
+      df['MA_P/E'] = df['P/E'].rolling(window=10).mean()
+      df['MA_P/B'] = df['P/B'].rolling(window=10).mean()
+      df['MA_ROE'] = df['ROE'].rolling(window=10).mean()
       
-              if btc_spot > ma_50_days:
-                  order_id = buy_order(trade_amount)
-                  if order_id:
-                      print(f'Buy order placed (order ID: {order_id})')
-                  else:
-                      print('Failed to place buy order')
-              else:
-                  print(f'BTC price ({btc_spot:.2f}) --> below the 50 day ma ({ma_50_days:.2f})')
+      plt.plot(df['P/E'], label='P/E')
+      plt.plot(df['MA_P/E'], label='MA_P/E')
+      plt.plot(df['P/B'], label='P/B')
+      plt.plot(df['MA_P/B'], label='MA_P/B')
+      plt.plot(df['ROE'], label='ROE')
+      plt.plot(df['MA_ROE'], label='MA_ROE')
+      plt.legend()
+      plt.show()
+      
+      def buy_signal(df):
+          if df['P/E'] < df['MA_P/E'] and df['P/B'] < df['MA_P/B'] and df['ROE'] > df['MA_ROE']:
+              return True
           else:
-              print('Not enough balance to place a trade')
+              return False
+      
+      def sell_signal(df):
+          if df['P/E'] > df['MA_P/E'] and df['P/B'] > df['MA_P/B'] and df['ROE'] < df['MA_ROE']:
+              return True
+          else:
+              return False
+      
+      signals = []
+      for i in range(len(df) - 1):
+          if buy_signal(df.iloc[i]):
+              signals.append('buy')
+          elif sell_signal(df.iloc[i]):
+              signals.append('sell')
+          else:
+              signals.append('hold')
+      
+      plt.plot(df['P/E'], label='P/E')
+      plt.plot(df['MA_P/E'], label='MA_P/E')
+      plt.plot(df['P/B'], label='P/B')
+      plt.plot(df['MA_P/B'], label='MA_P/B')
+      plt.plot(df['ROE'], label='ROE')
+      plt.plot(df['MA_ROE'], label='MA_ROE')
+      plt.plot(signals, label='Signals')
+      plt.legend()
+      plt.show()
+      
+      returns = np.zeros(len(signals))
+      for i in range(len(signals) - 1):
+          if signals[i] == 'buy':
+              returns[i + 1] = df['price'].iloc[i + 1] / df['price'].iloc[i]
+          else:
+              returns[i + 1] = 1
+      
+      print('Average return: {}'.format(np.mean(returns)))
+      print('Sharpe ratio: {}'.format(np.mean(returns) / np.std(returns)))
     `;
-      setScript(initialScript);
-    }, []);
-  
-    const handleScriptChange = (event) => {
-      setScript(event.target.value);
-    };
-  
-    useEffect(() => {
-      const timeoutId = setTimeout(() => {
-      }, 500);
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }, [script]);
   
     return (
       <StyledIDEContainer>
@@ -69,10 +94,18 @@ function TerminalUI() {
         </NavBar>
         <StyledCodeEditor> 
           <TextEditor>
-            <span style={{color: "#F733FF"}}>import&nbsp;<span style={{color: "#FFF"}}>os</span></span>
-            <span style={{color: "#F733FF"}}>import&nbsp;<span style={{color: "#FFF"}}>requests</span></span>
-            <br/>
-            <span style={{color: "#F733FF"}}>def&nbsp;<span style={{color: "#FAFF33"}}>trade_btc(<span style={{color: "#3DFFE4"}}>username, password</span>):</span></span>
+            <SyntaxHighlighter 
+              language="python" 
+              style={tomorrowNight} 
+              showLineNumbers={true}
+              customStyle={{ 
+                boxShadow: 'none', 
+                border: 'none', 
+                background: 'transparent',
+                fontFamily: 'Poppins, sans-serif',
+              }}>
+              {initialScript}
+            </SyntaxHighlighter>
           </TextEditor>
         </StyledCodeEditor>
       </StyledIDEContainer>
@@ -80,9 +113,3 @@ function TerminalUI() {
 }
 
 export default TerminalUI
-
-{/* <StyledCodeEditor value={script} onChange={handleScriptChange}> */}
-
-
-//#FF3348 - red
-//#23CC0F - green
