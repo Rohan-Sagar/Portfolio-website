@@ -97,17 +97,48 @@ function SwiperDropdown() {
     slidesPerView={1}
     pagination={{ clickable: true }}
     onSwiper={(swiper) => console.log(swiper)}
->
-  {pages?.map((page) => (
-    <SwiperSlide key={page.section}>
-      <img src={page.image} alt={page.section} />
-      <div className='page-container'>  
-        <h2>{page.section}</h2>
-        {page.section === "Programming Languages" && (
+    >
+    {pages?.map((page) => (
+      <SwiperSlide key={page.section}>
+        <img src={page.image} alt={page.section} />
+        <div className='page-container'>  
+          <h2>{page.section}</h2>
+          {page.section === "Programming Languages" && (
+            <DropdownTable>
+              <div className="grid-container">
+                <div>
+                  <h4>Beginner</h4>
+                  <ul>
+                    {page.items[0].technologies.map((tech) => (
+                      <li key={tech}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4>Intermediate</h4>
+                  <ul>
+                    {page.items[1].technologies.map((tech) => (
+                      <li key={tech}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4>Advanced</h4>
+                  <ul>
+                    {page.items[2].technologies.map((tech) => (
+                      <li key={tech}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </DropdownTable>
+        )}
+
+        {page.section === "Frameworks" && (
           <DropdownTable>
             <div className="grid-container">
               <div>
-                <h4>Beginner</h4>
+                <h4>Blockchain</h4>
                 <ul>
                   {page.items[0].technologies.map((tech) => (
                     <li key={tech}>{tech}</li>
@@ -115,7 +146,7 @@ function SwiperDropdown() {
                 </ul>
               </div>
               <div>
-                <h4>Intermediate</h4>
+                <h4>Data Science</h4>
                 <ul>
                   {page.items[1].technologies.map((tech) => (
                     <li key={tech}>{tech}</li>
@@ -123,120 +154,89 @@ function SwiperDropdown() {
                 </ul>
               </div>
               <div>
-                <h4>Advanced</h4>
+                <h4>Web Development</h4>
                 <ul>
                   {page.items[2].technologies.map((tech) => (
                     <li key={tech}>{tech}</li>
                   ))}
                 </ul>
               </div>
+              <div>
+                <h4>Testing</h4>
+                <ul>
+                  {page.items[3].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </DropdownTable>
-      )}
+        )}
 
-      {page.section === "Frameworks" && (
-        <DropdownTable>
-          <div className="grid-container">
-            <div>
-              <h4>Blockchain</h4>
-              <ul>
-                {page.items[0].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
+        {page.section === "Cloud Storage and Database" && (
+          <DropdownTable>
+            <div className="grid-container">
+              <div>
+                <h4>Cloud Storage</h4>
+                <ul>
+                  {page.items[0].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4>Database</h4>
+                <ul>
+                  {page.items[1].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4>Data Science</h4>
-              <ul>
-                {page.items[1].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
+          </DropdownTable>
+        )}
+        {page.section === "Other Tools" && (
+          <DropdownTable>
+            <div className="grid-container">
+              <div>
+                <h4>Deployment</h4>
+                <ul>
+                  {page.items[0].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4>Operating Systems</h4>
+                <ul>
+                  {page.items[1].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4>Project Management</h4>
+                <ul>
+                  {page.items[2].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4>Other</h4>
+                <ul>
+                  {page.items[3].technologies.map((tech) => (
+                    <li key={tech}>{tech}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4>Web Development</h4>
-              <ul>
-                {page.items[2].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Testing</h4>
-              <ul>
-                {page.items[3].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </DropdownTable>
-      )}
-
-      {page.section === "Cloud Storage and Database" && (
-        <DropdownTable>
-          <div className="grid-container">
-            <div>
-              <h4>Cloud Storage</h4>
-              <ul>
-                {page.items[0].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Database</h4>
-              <ul>
-                {page.items[1].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </DropdownTable>
-      )}
-      {page.section === "Other Tools" && (
-        <DropdownTable>
-          <div className="grid-container">
-            <div>
-              <h4>Deployment</h4>
-              <ul>
-                {page.items[0].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Operating Systems</h4>
-              <ul>
-                {page.items[1].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Project Management</h4>
-              <ul>
-                {page.items[2].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Other</h4>
-              <ul>
-                {page.items[3].technologies.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </DropdownTable>
-      )}
-      </div>
-    </SwiperSlide>
-  ))}
-  </Swiper>    
+          </DropdownTable>
+        )}
+        </div>
+      </SwiperSlide>
+    ))}
+    </Swiper>    
 )}
 
 export default SwiperDropdown;

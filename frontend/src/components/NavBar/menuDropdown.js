@@ -34,7 +34,7 @@ export default MenuDropdown
 
 const Container = styled.div`
   display: none;
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     order: 2;
     display: flex;
     flex-direction: column;

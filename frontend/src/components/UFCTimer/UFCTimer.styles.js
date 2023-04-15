@@ -6,7 +6,7 @@ export const Timer = styled.div`
   align-items: center;
   margin-top: 55px;
   
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     justify-content: center;
   }
 `
@@ -22,7 +22,7 @@ export const Clock = styled.div`
   height: 100%;
   display: flex;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     width: 100%;
     padding: 0 1em;
   }

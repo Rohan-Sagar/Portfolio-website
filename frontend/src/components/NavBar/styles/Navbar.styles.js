@@ -20,8 +20,8 @@ export const Nav = styled.nav`
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 
-  @media (max-width: 1000px) {
-    width: 100%;
+  @media (max-width: 1250px) {
+    width: 100% !important;
     padding: 0;
     top: 0;
     left: 0;
@@ -113,7 +113,7 @@ export const NavMenu = styled.div`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     width: 100%;
     margin-top: 0;
     justify-content: space-around;
@@ -127,7 +127,7 @@ export const LeftMenu = styled.div`
   .menu-btn {
     display: none;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     order: 2;
     a {
       display: none;
@@ -176,7 +176,7 @@ export const RightMenu = styled.div`
     height: 25px;
     margin-right: 12px;
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     position: relative;
     order: 3;
     right: 0;
@@ -224,7 +224,7 @@ export const Logo = styled.a`
       }
     }
   }
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     order: 1;
     align-items: flex-start;
     justify-content: flex-start;

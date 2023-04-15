@@ -15,11 +15,12 @@ body .swiper-slide {
 }
 
 .swiper {
-  position: relative;
+  position: fixed;
   background-color: #2A2C36 !important;
   width: 50%;
   border: 1px solid;
   border-radius: 0 0 7px 7px;
+  z-index: 2;
   font-family: "Poppins", sans-serif;
   opacity: 0;
   animation: slide-down 0.5s ease-out 0s forwards;
@@ -40,14 +41,14 @@ body .swiper-slide {
 @media (min-width: 1024px) {
   .swiper {
     top: 120px;
-    right: 220px;
+    left: 130px;
   }
 }
 
 @media (max-width: 1023px) {
   .swiper {
     width: 100%;
-    right: 180px;
+    left: 130px;
   }
 }
 

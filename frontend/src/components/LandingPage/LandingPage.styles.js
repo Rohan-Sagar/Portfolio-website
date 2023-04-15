@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     flex-direction: column;
     height: auto;
     justify-content: flex-start;
@@ -14,7 +14,7 @@ export const Container = styled.main`
 `;
 
 export const Landing = styled.div`
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     flex-wrap: wrap;
     margin: 100px auto 0;
   }
@@ -41,7 +41,7 @@ export const LeftMenu = styled.div`
   gap: 20px;
   // background: yellow;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     order: 2;
     width: 50%;
     gap: 0px;
@@ -63,7 +63,7 @@ export const Picture = styled.div`
     margin-top: 90px;
   }
 
-  @media (max-width: 1000px){
+  @media (max-width: 1250px){
     order: 1;
     width: 50%;
   }
@@ -87,7 +87,7 @@ export const RightMenu = styled.div`
     color: white !important;
   }
 
-  @media (max-width: 1000px){
+  @media (max-width: 1250px){
     order: 3;
     width: 100%;
     margin-bottom: 50px;
@@ -123,7 +123,7 @@ export const Name = styled.span`
   color: white;
   font-size: 60px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     font-size: 40px;
   }
 
@@ -141,7 +141,7 @@ export const SchoolDetails = styled.span`
     margin: 0;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     font-size: 16px;
   }
 
@@ -172,7 +172,7 @@ export const OtherInfo = styled.div`
     font-size: 14px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1250px) {
     h1 {
       font-size: 40px;
       width: 40px;

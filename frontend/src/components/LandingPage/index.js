@@ -160,7 +160,7 @@ function LandingPage() {
           </Picture>
 
           <RightMenu>
-            <h1>Update: Still working on making this website responsive</h1>
+            <h1>Update: Still working on making this website responsive for tablets and mobile phones</h1>
             <EventContext.Provider value={event}>
               <UFCTimer/>
             </EventContext.Provider>

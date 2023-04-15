@@ -19,15 +19,16 @@ export const Container = styled.main`
 `;
 
 export const Box = styled.div`
-  // @media (max-width: 1250px) {
-  //     flex-wrap: wrap;
-  // }
+  @media (max-width: 1250px) {
+      flex-wrap: wrap;
+  }
   display: flex;
   flex-direction: column;
   width: 95%;
   height: 75%;
   .swiper {
     width: 100%;
+    z-index: 1;
     font-family: 'Poppins', sans-serif;
     height: 100%;
     margin: -100px auto auto -135px;
