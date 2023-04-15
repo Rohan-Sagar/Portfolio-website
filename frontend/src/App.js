@@ -15,6 +15,7 @@ function App() {
       if (experienceSection && projectSection) {
         if (experienceSection?.getBoundingClientRect().top - 60 <= 0) {
           setIsBackgroundDark(false);
+          console.log(isBackgroundDark);
           if (projectSection?.getBoundingClientRect().top - 60 <= 0) {
             setIsBackgroundDark(true);
           }

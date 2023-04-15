@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import image1 from "./assets/development.svg"
 import image2 from "./assets/design.svg";
@@ -90,13 +90,14 @@ const pages = [
   },
 ];
 
-function SwiperDropdown() {
+function SwiperDropdown({ isBackgroundDark}) {
   return (
     <Swiper
     modules={[Pagination]}
     slidesPerView={1}
     pagination={{ clickable: true }}
-    onSwiper={(swiper) => console.log(swiper)}
+    isBackgroundDark={isBackgroundDark} 
+    className={isBackgroundDark ? 'swiper-light' : ''}
     >
     {pages?.map((page) => (
       <SwiperSlide key={page.section}>
