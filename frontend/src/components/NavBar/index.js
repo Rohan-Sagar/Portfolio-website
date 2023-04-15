@@ -19,7 +19,6 @@ function NavBar() {
       if (experienceSection && projectSection) {
         if (experienceSection.getBoundingClientRect().top - 60 <= 0) {
           setIsBackgroundDark(false);
-          console.log(experienceSection);
           if (projectSection.getBoundingClientRect().top - 60 <= 0) {
             setIsBackgroundDark(true);
           }
