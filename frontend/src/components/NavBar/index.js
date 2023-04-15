@@ -11,15 +11,14 @@ function NavBar() {
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const menuDropdown = () => setShowMenu(!showMenu);
+  const experienceSection = document.getElementById('experience-section');
+  const projectSection = document.getElementById('projects-section');
 
   useEffect(() => {
-    const experienceSection = document.getElementById('experience-section');
-    const projectSection = document.getElementById('projects-section');
     const handleScroll = () => {
       if (experienceSection && projectSection) {
         if (experienceSection.getBoundingClientRect().top - 60 <= 0) {
           setIsBackgroundDark(false);
-          console.log('experience');
           if (projectSection.getBoundingClientRect().top - 60 <= 0) {
             setIsBackgroundDark(true);
           }
