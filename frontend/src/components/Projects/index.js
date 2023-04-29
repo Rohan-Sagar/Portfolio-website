@@ -40,17 +40,10 @@ function Projects() {
                     Implemented hybrid database solution using AWS S3 and Pinata 
                     IPFS for CAD file storage.
                   </li>
-//                   <li>
-//                     Integrated real-time monitoring for 3D printing process using 
-//                     OctoPrint plugins, allowing quick issue detection.
-//                   </li>
                   <li>
                     Enabled G-code legend viewing and selection of infill patterns 
                     for optimized strength and accuracy.
                   </li>
-//                   <li>
-//                     Expanded range of supported CAD designs by integrating 3DM file format.
-//                   </li>
                 </div>
                 <div className="images">
                   <ImagesSwiper />
