@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const LandingPage = lazy(() => import('./LandingPage'));
 const Experience = lazy(() => import('./Experience'));
 const Projects = lazy(() => import('./Projects'));
+const Hobbies = lazy(() => import('./Hobbies'));
 
 function Home() {
   return (
@@ -16,6 +17,9 @@ function Home() {
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
         <Projects />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hobbies />
       </Suspense>
     </Container>
   )

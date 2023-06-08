@@ -71,13 +71,15 @@ export const Details = styled.div`
         margin-top: 0;
         font-size: 18px;
         margin-bottom: 1rem;
+        font-weight: 500;
 
     }
 
     li {
-        font-size: 17px;
+        font-size: 16px;
         margin-bottom: 0.5rem;
         padding-left: 2rem;
         text-indent: -1.5rem;
+        font-weight: 300;
     }
 `

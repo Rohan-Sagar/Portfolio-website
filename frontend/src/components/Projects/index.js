@@ -8,6 +8,59 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const projects_data = [
+    {
+      id: 1,
+      title: "Julienne - Slicer Software",
+      role: "Full-stack Developer",
+      date: "June 2022 - Present",
+      description: [
+        "Developed a web-based 3D slicer software using Kiri:Moto open source project as inspiration.",
+        "Planned and collaborated on user interface design using Figma, facilitating team-wide design efforts.",
+        "Implemented hybrid database solution using AWS S3 and Pinata IPFS for CAD file storage.",
+        "Integrated real-time monitoring for 3D printing process using OctoPrint plugins, allowing quick issue detection.",
+        "Enabled G-code legend viewing and selection of infill patterns for optimized strength and accuracy.",
+        "Expanded range of supported CAD designs by integrating 3DM file format."
+      ],
+    },
+    {
+      id: 2,
+      title: "Candy marketplace",
+      role: "Full-stack Developer",
+      date: "Nov 2022 - Nov 2022",
+      description: [
+        "Developed a website for trick or treat reviewing and candy marketplace using MERN stack.",
+        "Developed multiple RESTful APIs using Node.js and Express.js to gather review and user data in a MongoDB database.",
+        "Awarded for having the best authentication system at the Demon Hacks hackathon."
+      ],
+    },
+    {
+      id: 3,
+      title: "Fundamental Analysis Bot",
+      role: "Python Developer",
+      date: "Aug 2021 - May 2022",
+      description: [
+        "Developed bot using SimFin dataset and FinRL deep learning algorithms to analyze securities and make informed investment decisions.",
+        "Trained bot using FinRL algorithms, including A2C, DDPG, and PPO.",
+        "Evaluated the performance of the bot using various metrics, such as returns on investment and Sharpe ratio."
+      ],
+    },
+    {
+      id: 4,
+      title: "Serial Peripheral Interface - ECE 362",
+      role: "Embedded-C Lab",
+      date: "Lab Assignment",
+      description: [
+        "Initialized an SPI interface by 'bit-banging' the SCK, MOSI, and MISO pins.",
+        "Verified the 'bit-banging' method using the logic tool in Analog Discovery 2.",
+        "Demonstrated the SPI OLED display by displaying a 'Hello World' message.",
+        "Triggered the SPI DMA transfer to write characters using a circular buffer.",
+        "Created a game that was controlled by the SPI, OLED, and the Keypad.",
+      ],
+    }
+  ]
+
+
 function Projects() {
   return (
     <>
@@ -26,86 +79,73 @@ function Projects() {
             <SwiperSlide>
               <div className="swiper-container">
                 <div className="info">
-                  <h2>Julienne - Slicer Software</h2>
-                  <h3>Full-stack Developer</h3>
-                  <h4>June 2022 - Present</h4>
-                  <li>
-                    Developed a web-based 3D slicer software using Kiri:Moto open source project as inspiration.
-                  </li>
-                  <li>
-                    Planned and collaborated on user interface design using Figma, 
-                    facilitating team-wide design efforts.
-                  </li>
-                  <li>
-                    Implemented hybrid database solution using AWS S3 and Pinata 
-                    IPFS for CAD file storage.
-                  </li>
-                  <li>
-                    Integrated real-time monitoring for 3D printing process using 
-                    OctoPrint plugins, allowing quick issue detection.
-                  </li>
-                  <li>
-                    Enabled G-code legend viewing and selection of infill patterns 
-                    for optimized strength and accuracy.
-                  </li>
-                  <li>
-                    Expanded range of supported CAD designs by integrating 3DM file format.
-                  </li>
+                  <h2>{projects_data[0].title}</h2>
+                  <h3>{projects_data[0].role}</h3>
+                  <h4>{projects_data[0].date}</h4>
+                  <ul>
+                    {projects_data[0].description.map((item, index) => {
+                      return <li key={index}>{item}</li>
+                    })}
+                  </ul>
                 </div>
                 <div className="images">
                   <ImagesSwiper />
                 </div>
               </div>
             </SwiperSlide>
+
             <SwiperSlide>
             <div className="swiper-container">
                 <div className="info">
-                  <h2>Candy marketplace</h2>
-                  <h3>Full-stack Developer</h3>
-                  <h4>Nov 2022 - Nov 2022</h4>
-                  <li>
-                    Developed a website for trick or treat reviewing and candy 
-                    marketplace using MERN stack.
-                  </li>
-                  <li>
-                    Developed multiple RESTful APIs using Node.js and Express.js 
-                    to gather review and user data in a MongoDB database.
-                  </li>
-                  <li>
-                    Awarded for having the best authentication system at the 
-                    Demon Hacks hackathon. 
-                  </li>
+                  <h2>{projects_data[1].title}</h2>
+                  <h3>{projects_data[1].role}</h3>
+                  <h4>{projects_data[1].date}</h4>
+                  <ul>
+                    {projects_data[1].description.map((item, index) => {
+                      return <li key={index}>{item}</li>
+                    })}
+                  </ul>
                 </div>
                 <div className="images">
                   <img src={"assets/CandyMarketplace/1.png"} alt="candy-marketplace" />
                 </div>
-              </div>
+            </div>
             </SwiperSlide>
             
             <SwiperSlide>
             <div className="swiper-container">
                 <div className="info">
-                  <h2>Fundamental Analysis Bot</h2>
-                  <h3>Python Developer</h3>
-                  <h4>Aug 2021 - May 2022</h4>
-                  <li>
-                    Developed bot using SimFin dataset and FinRL deep learning 
-                    algorithms to analyze securities and make informed investment 
-                    decisions.
-                  </li>
-                  <li>
-                    Trained bot using FinRL algorithms, including A2C, 
-                    DDPG, and PPO. 
-                  </li>
-                  <li>
-                    Evaluated the performance of the bot using various metrics, such 
-                    as returns on investment and Sharpe ratio.
-                  </li>
+                  <h2>{projects_data[2].title}</h2>
+                  <h3>{projects_data[2].role}</h3>
+                  <h4>{projects_data[2].date}</h4>
+                  <ul>
+                    {projects_data[2].description.map((item, index) => {
+                      return <li key={index}>{item}</li>
+                    })}
+                  </ul>
                 </div>
                 <div className="images">
                   <TerminalUI />
                 </div>
+            </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+            <div className="swiper-container">
+              <div className="info">
+                <h2>{projects_data[3].title}</h2>
+                <h3>{projects_data[3].role}</h3>
+                <h4>{projects_data[3].date}</h4>
+                <ul>
+                  {projects_data[3].description.map((item, index) => {
+                    return <li key={index}>{item}</li>
+                  })}
+                </ul>
               </div>
+              <div className="images">
+                <img src={"assets/SPI.png"} alt="spi-circuit" style={{width: "50%", height: "50%"}} />
+              </div>
+            </div>
             </SwiperSlide>
           </Swiper>
         </Box>

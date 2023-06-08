@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "HackerFont";
+  src: url("/public/Hacked-KerX.ttf");
+}
+
 
 @font-face {
   font-family: 'UfcSecondaryFont';

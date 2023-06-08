@@ -18,10 +18,10 @@ import {
 import UFCTimer from '../UFCTimer/index';
 import EventContext from '../../context/useContext';
 import axios from 'axios';
-import cheerio from 'cheerio';
 import moment from 'moment';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import Hobbies from '../Hobbies';
 
 let id = 0;
 const INITIAL_STATES = [
@@ -160,7 +160,8 @@ function LandingPage() {
           </Picture>
 
           <RightMenu>
-            <h1>Update: Still working on making this website responsive for tablets and mobile phones</h1>
+            <Hobbies />
+            {/* <h1>Update: Still working on making this website responsive for tablets and mobile phones</h1>
             <EventContext.Provider value={event}>
               <UFCTimer/>
             </EventContext.Provider>
@@ -177,13 +178,13 @@ function LandingPage() {
               <UserSelect>
                 <span>What are your picks for the fight?</span>
                 <RedOption onClick={() => handleSelection("Red")}>
-                  {event.fighters[0] ? <p>{event.fighters[0]}</p> : "Pereira"}
+                  {event.fighters[0] ? <p>{event.fighters[0]}</p> : ""}
                 </RedOption>
                 <BlueOption onClick={() => handleSelection("Blue")}>
-                  {event.fighters[1] ? <p>{event.fighters[1]}</p> : "Adesanya"}
+                  {event.fighters[1] ? <p>{event.fighters[1]}</p> : ""}
                 </BlueOption>
               </UserSelect>
-            )}
+            )} */}
           </RightMenu>
         </Landing>
       </Container>

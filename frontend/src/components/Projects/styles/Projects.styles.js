@@ -49,6 +49,7 @@ export const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
   }
   
   .swiper-slide .swiper-container {
