@@ -24,6 +24,8 @@ function ImagesSwiper() {
         <SwiperSlide className='swiper-image'><img src={"assets/Julienne/3.png"} alt="slicer"/></SwiperSlide>
         <SwiperSlide className='swiper-image'><img src={"assets/Julienne/4.png"} alt="slicer"/></SwiperSlide>
         <SwiperSlide className='swiper-image'><img src={"assets/Julienne/5.png"} alt="slicer"/></SwiperSlide>
+        <SwiperSlide className='swiper-image'><img src={"assets/Julienne/6.png"} alt="slicer"/></SwiperSlide>
+        <SwiperSlide className='swiper-image'><img src={"assets/Julienne/7.png"} alt="slicer"/></SwiperSlide>
       </Swiper>
     </ImagesContainer>
   )
