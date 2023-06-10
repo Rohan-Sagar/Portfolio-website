@@ -8,6 +8,57 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const projects_data = [
+    {
+      id: 1,
+      title: "Julienne - Slicer Software",
+      role: "Full-stack Developer",
+      date: "June 2022 - Present",
+      description: [
+        "Developed a web-based 3D slicer software using Kiri:Moto open source project as inspiration.",
+        "Planned and collaborated on user interface design using Figma, facilitating team-wide design efforts.",
+        "Implemented hybrid database solution using AWS S3 and Pinata IPFS for CAD file storage.",
+        "Enabled G-code legend viewing and selection of infill patterns for optimized strength and accuracy.",
+      ],
+    },
+    {
+      id: 2,
+      title: "Candy marketplace",
+      role: "Full-stack Developer",
+      date: "Nov 2022 - Nov 2022",
+      description: [
+        "Developed a website for trick or treat reviewing and candy marketplace using MERN stack.",
+        "Developed multiple RESTful APIs using Node.js and Express.js to gather review and user data in a MongoDB database.",
+        "Awarded for having the best authentication system at the Demon Hacks hackathon."
+      ],
+    },
+    {
+      id: 3,
+      title: "Fundamental Analysis Bot",
+      role: "Python Developer",
+      date: "Aug 2021 - May 2022",
+      description: [
+        "Developed bot using SimFin dataset and FinRL deep learning algorithms to analyze securities and make informed investment decisions.",
+        "Trained bot using FinRL algorithms, including A2C, DDPG, and PPO.",
+        "Evaluated the performance of the bot using various metrics, such as returns on investment and Sharpe ratio."
+      ],
+    },
+    {
+      id: 4,
+      title: "Serial Peripheral Interface - ECE 362",
+      role: "Embedded-C Lab",
+      date: "Lab Assignment",
+      description: [
+        "Initialized an SPI interface by 'bit-banging' the SCK, MOSI, and MISO pins.",
+        "Verified the 'bit-banging' method using the logic tool in Analog Discovery 2.",
+        "Demonstrated the SPI OLED display by displaying a 'Hello World' message.",
+        "Triggered the SPI DMA transfer to write characters using a circular buffer.",
+        "Created a game that was controlled by the SPI, OLED, and the Keypad.",
+      ],
+    }
+  ]
+
+
 function Projects() {
   return (
     <>
