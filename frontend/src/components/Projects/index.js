@@ -18,9 +18,7 @@ const projects_data = [
         "Developed a web-based 3D slicer software using Kiri:Moto open source project as inspiration.",
         "Planned and collaborated on user interface design using Figma, facilitating team-wide design efforts.",
         "Implemented hybrid database solution using AWS S3 and Pinata IPFS for CAD file storage.",
-        "Integrated real-time monitoring for 3D printing process using OctoPrint plugins, allowing quick issue detection.",
         "Enabled G-code legend viewing and selection of infill patterns for optimized strength and accuracy.",
-        "Expanded range of supported CAD designs by integrating 3DM file format."
       ],
     },
     {
