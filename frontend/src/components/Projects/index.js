@@ -52,7 +52,7 @@ const projects_data = [
       description: [
         "Initialized an SPI interface by 'bit-banging' the SCK, MOSI, and MISO pins.",
         "Verified the 'bit-banging' method using the logic tool in Analog Discovery 2.",
-        "Demonstrated the SPI OLED display by displaying a 'Hello World' message.",
+        "Displayed a 'Hello World' message on the SPI OLED display.",
         "Triggered the SPI DMA transfer to write characters using a circular buffer.",
         "Created a game that was controlled by the SPI, OLED, and the Keypad.",
       ],
