@@ -76,7 +76,6 @@ export const Details = styled.div`
 
     li {
         font-size: 17px;
-        margin-bottom: 0.5rem;
         padding-left: 2rem;
         text-indent: -1.5rem;
     }
