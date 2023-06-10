@@ -13,7 +13,7 @@ export const Timer = styled.div`
 
 export const Clock = styled.div`
   box-sizing: border-box;
-  width: 70%;
+  width: 125%;
   height: 100%;
   padding: 0 1.5em;
   background-image: linear-gradient(180deg,#363636,#2b2b2b);
