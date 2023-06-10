@@ -15,10 +15,11 @@ const projects_data = [
       role: "Full-stack Developer",
       date: "June 2022 - Present",
       description: [
-        "Developed a web-based 3D slicer software using Kiri:Moto open source project as inspiration.",
+        "Developed a web-based 3D slicer application using Kiri:Moto open source project as inspiration.",
         "Planned and collaborated on user interface design using Figma, facilitating team-wide design efforts.",
-        "Implemented hybrid database solution using AWS S3 and Pinata IPFS for CAD file storage.",
-        "Enabled G-code legend viewing and selection of infill patterns for optimized strength and accuracy.",
+        "Enabled G-code legend view and selection of infill patterns to optimize strength and accuracy.",
+        "Integrated 3D printing via USB connection to printer and web serial communcation using Vanilla JS.",
+        "Designed a printer control panel that includes: Live layer view, line-by-line G-code sender, live temperature monitoring, and live printer status.",
       ],
     },
     {
