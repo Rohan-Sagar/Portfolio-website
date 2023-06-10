@@ -177,10 +177,10 @@ function LandingPage() {
               <UserSelect>
                 <span>What are your picks for the fight?</span>
                 <RedOption onClick={() => handleSelection("Red")}>
-                  {event.fighters[0] ? <p>{event.fighters[0]}</p> : "Pereira"}
+                  {event.fighters[0] ? <p>{event.fighters[0]}</p> : <p>Fetching Data...</p>}
                 </RedOption>
                 <BlueOption onClick={() => handleSelection("Blue")}>
-                  {event.fighters[1] ? <p>{event.fighters[1]}</p> : "Adesanya"}
+                  {event.fighters[1] ? <p>{event.fighters[1]}</p> : <p>Fetching Data...</p>}
                 </BlueOption>
               </UserSelect>
             )}
