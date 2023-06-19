@@ -128,7 +128,7 @@ function UFCTimer() {
       <ContestantTwo>
         <Container>
           <TextWrapper>
-            <span>{event.fighters[1] ? event.fighters[0] : "Fetching"}</span>
+            <span>{event.fighters[1] ? event.fighters[1] : "Fetching"}</span>
           </TextWrapper>
           <BlueBanner/>
         </Container>
