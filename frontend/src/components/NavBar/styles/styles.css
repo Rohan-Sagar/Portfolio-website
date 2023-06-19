@@ -92,7 +92,7 @@ body .swiper-horizontal > .swiper-pagination-bullets {
   padding-left: 80px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1250px) {
   body .swiper-horizontal > .swiper-pagination-bullets {
     display: none;
   }
