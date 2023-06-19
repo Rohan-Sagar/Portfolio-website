@@ -103,6 +103,7 @@ function TerminalUI() {
                 border: 'none', 
                 background: 'transparent',
                 fontFamily: 'Poppins, sans-serif',
+                fontSize: '0.8rem',
               }}>
               {initialScript}
             </SyntaxHighlighter>

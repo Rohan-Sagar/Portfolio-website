@@ -28,6 +28,14 @@ export const StyledIDEContainer = styled.div`
   position: absolute;
   border-radius: 6px;
   background-color: #191A20;
+  @media (max-width: 768px) {
+    width: 100%;
+    top: 400px;
+  }
+  @media (max-width: 500px) {
+    width: 330px;
+    top: 700px;
+  }
 `;
 
 export const NavBar = styled.div`
