@@ -89,8 +89,15 @@ body .swiper-horizontal > .swiper-pagination-bullets {
   bottom: 2px;
   left: 0;
   text-align: left;
-  padding-left: 135px;
+  padding-left: 80px;
 }
+
+@media screen and (max-width: 768px) {
+  body .swiper-horizontal > .swiper-pagination-bullets {
+    display: none;
+  }
+}
+
 
 body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   background: white;

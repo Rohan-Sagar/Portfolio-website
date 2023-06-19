@@ -62,9 +62,6 @@ export const Nav = styled.nav`
   }
 `;
 
-
-
-
 export const NavMenu = styled.div`
   display: flex;
   justify-content: space-between;
@@ -138,6 +135,7 @@ export const LeftMenu = styled.div`
       cursor: pointer;
       color: black;
       flex-direction: row;
+      margin-top: 5px;
       span {
         display: flex;
         position: relative;
@@ -179,10 +177,12 @@ export const RightMenu = styled.div`
   @media (max-width: 1250px) {
     position: relative;
     order: 3;
-    right: 0;
+    left: 20px;
     align-items: flex-end;
     justify-content: flex-end;
     img {
+      width: 20px;
+      height: 20px;
       padding: 0;
       margin-right: 0;
     }
@@ -230,7 +230,8 @@ export const Logo = styled.a`
     justify-content: flex-start;
     padding-left: 10px;
     margin: 0;
-    right: 40px;
+    right: 20px;
+    margin-top: 5px;
     position: relative;
   }
 

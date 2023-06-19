@@ -8,12 +8,13 @@ export const Timer = styled.div`
   
   @media (max-width: 1250px) {
     justify-content: center;
+    height: 35px;
   }
 `
 
 export const Clock = styled.div`
   box-sizing: border-box;
-  width: 100%;
+  width: 250px;
   height: 100%;
   padding: 0 1.5em;
   background-image: linear-gradient(180deg,#363636,#2b2b2b);
@@ -23,10 +24,8 @@ export const Clock = styled.div`
   display: flex;
 
   @media (max-width: 1250px) {
-    width: 100%;
-    padding: 0 1em;
+    padding: 0 2.5em;
   }
-
 `
 
 export const Logo = styled.div`
@@ -44,6 +43,12 @@ export const Logo = styled.div`
     height: 100%;
     transition: fill .3s ease;
     filter: invert(100%);
+  }
+  @media (max-width: 767px) {
+    left: -20px;
+    img {
+      width: 2.5em;
+    }
   }
 `
 
@@ -69,6 +74,11 @@ export const ClockWrapper = styled.div`
     font-weight: 600;
     display: flex;
   }
+  @media (max-width: 767px) {
+    span {
+      font-size: 1.1em;
+      right: 65px;
+    }
 `
 
 export const Rounds = styled.div`
@@ -81,6 +91,9 @@ export const Rounds = styled.div`
   right: -30px;
   top: 50%;
   transform: translateY(-50%);
+  @media (max-width: 767px) {
+    right: -10px;
+  }
 `;
 
 export const RoundBar = styled.div`
@@ -157,7 +170,7 @@ export const Contestant = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 400px;
+  width: 30%;
 `
 
 export const ContestantTwo = styled(Contestant)`
@@ -181,7 +194,7 @@ export const TextWrapper = styled.div`
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
-  @media (max-width: 420px) {
+  @media (max-width: 500px) {
     font-size: 0.5em;
   }
 `

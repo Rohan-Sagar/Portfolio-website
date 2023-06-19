@@ -106,7 +106,6 @@ function UFCTimer() {
   return (
     <>
     <Timer>
-
       <Clock>
         <ClockWrapper>
           <Logo>
@@ -118,24 +117,23 @@ function UFCTimer() {
           </Rounds>
         </ClockWrapper>
       </Clock>
-
-    <Contestant>
-      <Container>
-        <TextWrapper>
-          <span>{event.fighters[0]}</span>
-        </TextWrapper>
-        <RedBanner/>
-      </Container>
-    </Contestant>
-    <ContestantTwo>
-      <Container>
-        <TextWrapper>
-          <span>{event.fighters[1]}</span>
-        </TextWrapper>
-        <BlueBanner/>
-      </Container>
-    </ContestantTwo>
-  </Timer>
+      <Contestant>
+        <Container>
+          <TextWrapper>
+            <span>{event.fighters[0] ? event.fighters[0] : "Fetching" }</span>
+          </TextWrapper>
+          <RedBanner/>
+        </Container>
+      </Contestant>
+      <ContestantTwo>
+        <Container>
+          <TextWrapper>
+            <span>{event.fighters[1] ? event.fighters[0] : "Fetching"}</span>
+          </TextWrapper>
+          <BlueBanner/>
+        </Container>
+      </ContestantTwo>
+    </Timer>
     <Date>{timeRemaining}</Date>
   </>
   )}

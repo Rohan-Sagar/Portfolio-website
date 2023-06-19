@@ -46,6 +46,11 @@ export const LeftMenu = styled.div`
     width: 50%;
     gap: 0px;
   }
+
+  @media (max-width: 768px) {
+    top: 20px;
+    position: relative;
+  }
 `;
 
 export const Picture = styled.div`
@@ -55,6 +60,7 @@ export const Picture = styled.div`
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
+
 
   img {
     max-height: 300px;
@@ -70,7 +76,9 @@ export const Picture = styled.div`
 
   @media (max-width: 500px){
     img {
-      max-height: 150px;
+      max-height: 200px;
+      position: relative;
+      bottom: 25px;
     }
   }
 `;
@@ -98,7 +106,10 @@ export const TagWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-`
+  @media (max-width: 500px) {
+    flex-direction: row;
+  }
+`;
 
 export const Tag = styled.p`
   font-size: 12px;
@@ -111,21 +122,14 @@ export const Tag = styled.p`
   border-radius: 3px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
-  @media (max-width: 768px) {
-    margin-bottom: 5px;
-  }
   @media (max-width: 500px) {
-    font-size: 9px;
+    font-size: 7px;
   }
 `;
 
 export const Name = styled.span`
   color: white;
   font-size: 60px;
-
-  @media (max-width: 1250px) {
-    font-size: 40px;
-  }
 
   @media (max-width: 500px) {
     font-size: 30px;
@@ -139,10 +143,6 @@ export const SchoolDetails = styled.span`
   p {
     font-size: 14px;
     margin: 0;
-  }
-
-  @media (max-width: 1250px) {
-    font-size: 16px;
   }
 
   @media (max-width: 500px) {
@@ -182,7 +182,7 @@ export const OtherInfo = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 700px) {
     h1 {
       font-size: 20px;
       width: 20px;
@@ -191,7 +191,8 @@ export const OtherInfo = styled.div`
       font-size: 10px;
     }
   }
-}`;
+}`
+;
 
 export const NumberChart = styled.div`
   display: flex;
@@ -230,7 +231,7 @@ export const RedOption = styled.div`
   width: 150px;
   margin: auto;
   background-color: rgb(143, 2, 14);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   font-family: "Share Tech Mono", monospace;
   letter-spacing: 2px;

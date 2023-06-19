@@ -115,9 +115,21 @@ export const Box = styled.div`
     justify-content: center;
   }
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1250px) {
+    .swiper-slide .swiper-container {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
     .swiper {
       top: 100px;
+    }
+    .images {
+      width: 100%;
+      height: 100% !important;
+    }
+    .info {
+      width: 100%;
     }
   }
 
