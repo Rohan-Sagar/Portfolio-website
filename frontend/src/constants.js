@@ -96,6 +96,7 @@ export const tagsInfo = [
 
 export const navBarData = [
   {
+    id: 0,
     section: "Programming Languages",
     items: [
       {
@@ -113,6 +114,7 @@ export const navBarData = [
     ],
   },
   {
+    id: 1,
     section: "Frameworks",
     items: [
       {
@@ -141,6 +143,7 @@ export const navBarData = [
     ],
   },
   {
+    id: 2,
     section: "Cloud Storage and Database",
     items: [
       {
@@ -154,6 +157,7 @@ export const navBarData = [
     ],
   },
   {
+    id: 3,
     section: "Other Tools",
     items: [
       {

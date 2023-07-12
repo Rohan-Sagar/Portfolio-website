@@ -24,7 +24,7 @@ function SwiperDropdown({ isBackgroundDark }) {
     >
       {navBarData?.map((page) => (
         <SwiperSlide key={page.section}>
-          <img src={images} alt={page.section} />
+          <img src={images[page.id]} alt={page.section} />
           <div className="page-container">
             <h2>{page.section}</h2>
             {page.section === "Programming Languages" && (
