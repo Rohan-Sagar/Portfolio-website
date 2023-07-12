@@ -3,7 +3,7 @@ import { Container, Box, Logo, Details } from "./Experience.styles";
 import { experienceData } from "../../constants";
 
 function Experience() {
-  console.log(experienceData);
+  // console.log(experienceData);
   return (
     <Container id="experience-section">
       <h1 id="experience">Experience</h1>
