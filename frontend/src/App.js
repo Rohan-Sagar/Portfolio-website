@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 import NavBar from "./components/NavBar/index";
 import Home from "./components/Home";
 
 function App() {
   const [isBackgroundDark, setIsBackgroundDark] = useState(true);
 
-  const experienceSection = document.getElementById('experience-section');
-  const projectSection = document.getElementById('projects-section');
+  const experienceSection = document.getElementById("experience-section");
+  const projectSection = document.getElementById("projects-section");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,19 +24,16 @@ function App() {
         }
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-    <NavBar isBackgroundDark={isBackgroundDark} />
-    <Router>
+      <NavBar isBackgroundDark={isBackgroundDark} />
+      <Router>
         <Routes>
-          <Route
-            path="/"
-            element={<Home/>}
-          />
+          <Route path="/" element={<Home />} />
         </Routes>
       </Router>
     </>

@@ -1,9 +1,9 @@
-import React, { lazy, Suspense } from 'react';
-import styled from 'styled-components';
+import React, { lazy, Suspense } from "react";
+import styled from "styled-components";
 
-const LandingPage = lazy(() => import('./LandingPage'));
-const Experience = lazy(() => import('./Experience'));
-const Projects = lazy(() => import('./Projects'));
+const LandingPage = lazy(() => import("./LandingPage"));
+const Experience = lazy(() => import("./Experience"));
+const Projects = lazy(() => import("./Projects"));
 
 function Home() {
   return (
@@ -18,17 +18,17 @@ function Home() {
         <Projects />
       </Suspense>
     </Container>
-  )
+  );
 }
 
-export default Home
+export default Home;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #191A20;
+  background-color: #191a20;
 
   @media (max-width: 1250px) {
     align-items: center;
   }
-`
+`;

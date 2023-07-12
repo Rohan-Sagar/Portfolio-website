@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.main`
   @media (max-width: 1250px) {
@@ -20,7 +20,7 @@ export const Container = styled.main`
 
 export const Box = styled.div`
   @media (max-width: 1250px) {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ export const Box = styled.div`
   .swiper {
     width: 100%;
     z-index: 1;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     height: 100%;
     margin: -100px auto auto -135px;
     left: 150px;
@@ -37,11 +37,11 @@ export const Box = styled.div`
     position: relative;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   }
-  
+
   .swiper-wrapper {
-    background-color: #1C1D24;
+    background-color: #1c1d24;
   }
-  
+
   .swiper-slide {
     width: 100%;
     height: 100%;
@@ -50,7 +50,7 @@ export const Box = styled.div`
     justify-content: center;
     align-items: center;
   }
-  
+
   .swiper-slide .swiper-container {
     position: relative;
     display: flex;
@@ -82,16 +82,17 @@ export const Box = styled.div`
       margin-top: 5px;
     }
   }
-  
+
   .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
-  .swiper-button-next, .swiper-button-prev {
-    color: #7B7B7B !important;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #7b7b7b !important;
   }
 
   .swiper-pagination-bullet {
@@ -132,8 +133,7 @@ export const Box = styled.div`
       width: 100%;
     }
   }
-
-`
+`;
 
 export const ImagesContainer = styled.div`
   .swiper-images {
@@ -152,7 +152,8 @@ export const ImagesContainer = styled.div`
         margin: 0;
       }
     }
-    .swiper-button-next, .swiper-button-prev {
+    .swiper-button-next,
+    .swiper-button-prev {
       color: #606371 !important;
       width: 10px;
     }
@@ -161,4 +162,4 @@ export const ImagesContainer = styled.div`
       background: #fff !important;
     }
   }
-`
+`;

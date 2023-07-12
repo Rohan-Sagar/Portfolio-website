@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
 
 function MenuDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ function MenuDropdown() {
   );
 }
 
-export default MenuDropdown
+export default MenuDropdown;
 
 const Container = styled.div`
   display: none;
@@ -48,7 +48,7 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
   }
-`
+`;
 
 const Menu = styled.div`
   display: flex;
@@ -82,5 +82,4 @@ const Menu = styled.div`
       }
     }
   }
-
-`
+`;

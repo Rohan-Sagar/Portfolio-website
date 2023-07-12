@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Circle = styled.label`
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    border-radius: 50%;
-`
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+`;
 
 export const RedCircle = styled(Circle)`
   background-color: #ff4d4f;
@@ -27,7 +27,7 @@ export const StyledIDEContainer = styled.div`
   width: 50%;
   position: absolute;
   border-radius: 6px;
-  background-color: #191A20;
+  background-color: #191a20;
   @media (max-width: 768px) {
     width: 100%;
     top: 400px;
@@ -39,23 +39,23 @@ export const StyledIDEContainer = styled.div`
 `;
 
 export const NavBar = styled.div`
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    height: 40px;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    background-color: #3D3D3D;
-    border-radius: 6px 6px 0 0;
-    padding: 10px;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  height: 40px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  background-color: #3d3d3d;
+  border-radius: 6px 6px 0 0;
+  padding: 10px;
 
-    h4 {
-        left: 40%;
-        top: 2%;
-        position: absolute;
-        color: white !important;
-    }
-`
+  h4 {
+    left: 40%;
+    top: 2%;
+    position: absolute;
+    color: white !important;
+  }
+`;
 
 export const StyledCodeEditor = styled.div`
   height: 100%;
@@ -73,7 +73,6 @@ export const StyledCodeEditor = styled.div`
     outline: none;
   }
 `;
-
 
 export const TextEditor = styled.div`
   display: flex;

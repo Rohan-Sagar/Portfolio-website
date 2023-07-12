@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Nav = styled.nav`
   position: fixed;
@@ -31,7 +31,7 @@ export const Nav = styled.nav`
   }
 
   &.nav--dark {
-    background-color: #191A20;
+    background-color: #191a20;
 
     a {
       color: white;
@@ -257,7 +257,7 @@ export const DropdownTable = styled.div`
     white-space: nowrap;
   }
   .grid-container h4 {
-    color: #BDBDBD;
+    color: #bdbdbd;
     font-size: 12px;
   }
   .grid-container ul {

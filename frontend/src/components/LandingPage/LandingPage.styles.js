@@ -10,7 +10,7 @@ export const Container = styled.main`
   display: flex;
   width: 100%;
   height: 800px;
-  background-color: #191A20;
+  background-color: #191a20;
 `;
 
 export const Landing = styled.div`
@@ -29,7 +29,7 @@ export const Landing = styled.div`
   // @media (max-width: 500px) {
   //   margin: 100px -10px auto;
   // }
-`
+`;
 
 export const LeftMenu = styled.div`
   display: flex;
@@ -61,7 +61,6 @@ export const Picture = styled.div`
   justify-content: center;
   align-items: center;
 
-
   img {
     max-height: 300px;
     max-width: 100%;
@@ -69,12 +68,12 @@ export const Picture = styled.div`
     margin-top: 90px;
   }
 
-  @media (max-width: 1250px){
+  @media (max-width: 1250px) {
     order: 1;
     width: 50%;
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     img {
       max-height: 200px;
       position: relative;
@@ -95,12 +94,12 @@ export const RightMenu = styled.div`
     color: white !important;
   }
 
-  @media (max-width: 1250px){
+  @media (max-width: 1250px) {
     order: 3;
     width: 100%;
     margin-bottom: 50px;
   }
-`
+`;
 
 export const TagWrapper = styled.div`
   display: flex;
@@ -116,11 +115,14 @@ export const Tag = styled.p`
   padding: 2px 5px;
   color: white;
   background-color: #424247;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-right: 5px;
   margin-bottom: 5px;
   border-radius: 3px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), 0px 2px 2px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0px 1px 1px rgba(0, 0, 0, 0.15),
+    0px 2px 2px rgba(0, 0, 0, 0.15),
+    0px 3px 3px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
   @media (max-width: 500px) {
     font-size: 7px;
@@ -191,8 +193,7 @@ export const OtherInfo = styled.div`
       font-size: 10px;
     }
   }
-}`
-;
+}`;
 
 export const NumberChart = styled.div`
   display: flex;
@@ -201,13 +202,13 @@ export const NumberChart = styled.div`
   width: 80%;
   gap: 30px;
   label {
-    border-right: 2px solid #3F3F3F;
+    border-right: 2px solid #3f3f3f;
   }
 
   @media (max-width: 768px) {
     gap: 10px;
   }
-`
+`;
 
 export const UserSelect = styled.div`
   display: flex;
@@ -225,7 +226,7 @@ export const UserSelect = styled.div`
       font-size: 14px;
     }
   }
-`
+`;
 
 export const RedOption = styled.div`
   width: 150px;
@@ -266,4 +267,4 @@ export const RedOption = styled.div`
 
 export const BlueOption = styled(RedOption)`
   background-color: rgb(41, 71, 144) !important;
-`
+`;

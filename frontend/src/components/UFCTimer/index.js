@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from "react";
 import {
   Clock,
   Logo,
@@ -14,41 +14,45 @@ import {
   Container,
   Timer,
   Date,
-} from './UFCTimer.styles';
-import moment from 'moment';
-import EventContext from '../../context/useContext';
+} from "./UFCTimer.styles";
+import moment from "moment";
+import EventContext from "../../context/useContext";
 
 function UFCTimer() {
-  const [timeRemaining, setTimeRemaining] = useState('');
+  const [timeRemaining, setTimeRemaining] = useState("");
   const [timeLeft, setTimeLeft] = useState(300);
   const [roundNumber, setRoundNumber] = useState(1);
   const event = useContext(EventContext);
-  
+
   const roundTime = 300;
   const maxRounds = 5;
-  
-  let minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
+
+  let minutes = Math.floor(timeLeft / 60)
+    .toString()
+    .padStart(2, "0");
   let seconds = (timeLeft % 60).toString().padStart(2, " ").replace(" ", "0");
 
   const getRoundBarShape = (index) => {
     const round = roundNumber + index;
     if (round === roundNumber) {
-      return 'square';
+      return "square";
     } else {
-      return 'vertical';
+      return "vertical";
     }
   };
-  
+
   const renderRoundBar = () => {
     const roundBars = [];
-  
+
     for (let i = 1; i <= maxRounds; i++) {
       const shape = getRoundBarShape(i - roundNumber);
-      if (shape === 'square') {
+      if (shape === "square") {
         roundBars.push(<RoundBarSquare key={i}>R{i}</RoundBarSquare>);
       } else {
-        const color = i <= roundNumber ? '#D4AF37' : '#727272';
-        roundBars.push(<RoundBar key={i} shape='vertical' color={color}></RoundBar>);
+        const color = i <= roundNumber ? "#D4AF37" : "#727272";
+        roundBars.push(
+          <RoundBar key={i} shape="vertical" color={color}></RoundBar>,
+        );
       }
     }
     return roundBars;
@@ -71,7 +75,7 @@ function UFCTimer() {
         }
       });
     }, 1000);
-  
+
     return () => {
       clearInterval(countdown);
     };
@@ -96,47 +100,48 @@ function UFCTimer() {
         setTimeRemaining("IT'S TIME FOR WAR");
         clearInterval(interval);
       } else {
-        setTimeRemaining(`${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+        setTimeRemaining(
+          `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`,
+        );
       }
     }, 1000);
     return () => clearInterval(interval);
   }, [event.eventDate]);
 
-
   return (
     <>
-    <Timer>
-      <Clock>
-        <ClockWrapper>
-          <Logo>
-            <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
-          </Logo>
-          <span>{minutes}:{seconds}</span>
-          <Rounds>
-            {renderRoundBar(0)}
-          </Rounds>
-        </ClockWrapper>
-      </Clock>
-      <Contestant>
-        <Container>
-          <TextWrapper>
-            <span>{event.fighters[0] ? event.fighters[0] : "Fetching" }</span>
-          </TextWrapper>
-          <RedBanner/>
-        </Container>
-      </Contestant>
-      <ContestantTwo>
-        <Container>
-          <TextWrapper>
-            <span>{event.fighters[1] ? event.fighters[1] : "Fetching"}</span>
-          </TextWrapper>
-          <BlueBanner/>
-        </Container>
-      </ContestantTwo>
-    </Timer>
-    <Date>{timeRemaining}</Date>
-  </>
-  )}
+      <Timer>
+        <Clock>
+          <ClockWrapper>
+            <Logo>
+              <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
+            </Logo>
+            <span>
+              {minutes}:{seconds}
+            </span>
+            <Rounds>{renderRoundBar(0)}</Rounds>
+          </ClockWrapper>
+        </Clock>
+        <Contestant>
+          <Container>
+            <TextWrapper>
+              <span>{event.fighters[0] ? event.fighters[0] : "Fetching"}</span>
+            </TextWrapper>
+            <RedBanner />
+          </Container>
+        </Contestant>
+        <ContestantTwo>
+          <Container>
+            <TextWrapper>
+              <span>{event.fighters[1] ? event.fighters[1] : "Fetching"}</span>
+            </TextWrapper>
+            <BlueBanner />
+          </Container>
+        </ContestantTwo>
+      </Timer>
+      <Date>{timeRemaining}</Date>
+    </>
+  );
+}
 
-export default UFCTimer
-
+export default UFCTimer;

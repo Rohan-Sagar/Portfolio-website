@@ -1,23 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Timer = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
   margin-top: 55px;
-  
+
   @media (max-width: 1250px) {
     justify-content: center;
     height: 35px;
   }
-`
+`;
 
 export const Clock = styled.div`
   box-sizing: border-box;
   width: 250px;
   height: 100%;
   padding: 0 1.5em;
-  background-image: linear-gradient(180deg,#363636,#2b2b2b);
+  background-image: linear-gradient(180deg, #363636, #2b2b2b);
   transform-origin: center 0;
   transform: translate(0px, 0%);
   height: 100%;
@@ -26,7 +26,7 @@ export const Clock = styled.div`
   @media (max-width: 1250px) {
     padding: 0 2.5em;
   }
-`
+`;
 
 export const Logo = styled.div`
   width: 70px;
@@ -41,7 +41,7 @@ export const Logo = styled.div`
     transform: translate(-15px, 0%);
     width: 3em;
     height: 100%;
-    transition: fill .3s ease;
+    transition: fill 0.3s ease;
     filter: invert(100%);
   }
   @media (max-width: 767px) {
@@ -50,7 +50,7 @@ export const Logo = styled.div`
       width: 2.5em;
     }
   }
-`
+`;
 
 export const ClockWrapper = styled.div`
   position: fixed;
@@ -79,7 +79,7 @@ export const ClockWrapper = styled.div`
       font-size: 1.1em;
       right: 65px;
     }
-`
+`;
 
 export const Rounds = styled.div`
   display: flex;
@@ -99,14 +99,14 @@ export const Rounds = styled.div`
 export const RoundBar = styled.div`
   height: 20px;
   width: 3px;
-  background-color: ${props => props.color ? props.color : '#727272'};
+  background-color: ${(props) => (props.color ? props.color : "#727272")};
   margin-right: 5px;
 `;
 
 export const RoundBarSquare = styled(RoundBar)`
   width: 20px;
   text-align: center;
-  background-color: #D4AF37;
+  background-color: #d4af37;
 `;
 
 export const Info = styled.div`
@@ -124,7 +124,7 @@ export const Info = styled.div`
   margin-bottom: 0.25em;
   padding: 0 1.25em;
   overflow: hidden;
-  background-image: linear-gradient(0deg,#000,#363636);
+  background-image: linear-gradient(0deg, #000, #363636);
   transform-origin: center 100%;
   span {
     color: white;
@@ -135,7 +135,7 @@ export const Info = styled.div`
     white-space: nowrap;
     text-transform: uppercase;
   }
-`
+`;
 
 export const RedBanner = styled.span`
   position: absolute;
@@ -147,36 +147,36 @@ export const RedBanner = styled.span`
   visibility: inherit;
   transform: translate(0%, -50%);
   background-color: rgb(143, 2, 14);
-`
+`;
 
-export const BlueBanner = styled(RedBanner) `
+export const BlueBanner = styled(RedBanner)`
   background-color: rgb(41, 71, 144) !important;
   transform: translate(0%, -50%);
   right: auto;
   left: 0;
-`
+`;
 
 export const Contestant = styled.div`
   order: -1;
   overflow: hidden;
   color: white;
   font-size: 1.3em;
-  font-family: "Share Tech Mono",monospace;
+  font-family: "Share Tech Mono", monospace;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background-image: linear-gradient(0deg,#4b4c50,#696969);
+  background-image: linear-gradient(0deg, #4b4c50, #696969);
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 30%;
-`
+`;
 
 export const ContestantTwo = styled(Contestant)`
   order: 1;
   flex-direction: row;
-`
+`;
 
 export const TextWrapper = styled.div`
   opacity: 1;
@@ -197,7 +197,7 @@ export const TextWrapper = styled.div`
   @media (max-width: 500px) {
     font-size: 0.5em;
   }
-`
+`;
 
 export const Container = styled.div`
   -webkit-order: -1;
@@ -217,10 +217,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-`
+`;
 
 export const Date = styled.span`
   font-size: 18px;
   color: white;
   margin: 0 auto;
-`
+`;

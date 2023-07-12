@@ -1,6 +1,5 @@
-
 @font-face {
-  font-family: 'UfcSecondaryFont';
+  font-family: "UfcSecondaryFont";
   src: url("/public/Share/Share-Bold.ttf");
   src: url("/public/Share/Share-BoldItalic.ttf");
   src: url("/public/Share/Share-Italic.ttf");
@@ -8,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'UfcFont';
+  font-family: "UfcFont";
   src: url("/public/Teko/Teko-Bold.ttf");
   src: url("/public/Teko/Teko-Light.ttf");
   src: url("/public/Teko/Teko-Medium.ttf");
@@ -17,16 +16,16 @@
 }
 
 @font-face {
-  font-family: 'Newfont';
+  font-family: "Newfont";
   src: url("/public/UFC-sternbach-font-betterstudio.com/Sternbach-Bold-Italic.otf");
   font-style: bold;
 }
 
 body {
   margin: 0;
-  background-color: #191A20 !important;
+  background-color: #191a20 !important;
   font-weight: 500;
-  font-family: 'UfcFont', sans-serif;
+  font-family: "UfcFont", sans-serif;
   color: #191919;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,6 +34,6 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

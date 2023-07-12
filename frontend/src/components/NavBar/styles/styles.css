@@ -16,7 +16,7 @@ body .swiper-slide {
 
 .swiper {
   position: fixed;
-  background-color: #2A2C36 !important;
+  background-color: #2a2c36 !important;
   width: 50%;
   border: 1px solid;
   border-radius: 0 0 7px 7px;
@@ -54,20 +54,19 @@ body .swiper-slide {
 
 .swiper h2 {
   font-size: 13px;
-  color: #BDBDBD;
+  color: #bdbdbd;
   margin-bottom: -3px;
 }
 
 .swiper thead {
   font-size: 13px;
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 .swiper td {
   font-size: 14px;
-  color: #BDBDBD;
+  color: #bdbdbd;
   font-style: normal;
-
 }
 
 body .swiper-slide > img {
@@ -97,7 +96,6 @@ body .swiper-horizontal > .swiper-pagination-bullets {
     display: none;
   }
 }
-
 
 body .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   background: white;
