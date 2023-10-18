@@ -1,83 +1,112 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-  Nav,
-  NavMenu,
-  LeftMenu,
-  Logo,
-  RightMenu,
+  NavbarStyle,
+  LeftMenuStyle,
+  LeftMenuTextStyle,
+  RightMenuStyle,
+  LogoStyle,
 } from "./styles/Navbar.styles";
-import SwiperDropdown from "./swiperDropdown";
-import MenuDropdown from "./menuDropdown";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import MenuIcon from "@mui/icons-material/Menu";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import IconButton from "@mui/material/IconButton";
 
-function NavBar({ isBackgroundDark }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+const pages = ["HOME", "SKILLS", "EXPERIENCE", "PROJECTS", "CONTACT"];
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
-  const menuDropdown = () => setShowMenu(!showMenu);
+function ResponsiveAppBar() {
+  const [anchorElNav, setAnchorElNav] = useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
   return (
-    <>
-      {showMenu && <MenuDropdown />}
-      <Nav
-        isBackgroundDark={isBackgroundDark}
-        className={isBackgroundDark ? "" : "nav--dark"}
-      >
-        <NavMenu>
-          <LeftMenu>
-            <div className="menu-btn" onClick={menuDropdown}>
-              <span>MENU</span>
-              <img src={"/assets/down-arrow.png"} alt="menu" />
-            </div>
-            <a href="/">
-              <span>HOME</span>
-            </a>
-            <a className="skills-btn" onClick={toggleDropdown}>
-              <span>SKILLS</span>
-            </a>
-            <a href="#experience">
-              <span>EXPERIENCE</span>
-            </a>
-            <a href="#projects">
-              <span>PROJECTS</span>
-            </a>
-          </LeftMenu>
+    <AppBar position="fixed" sx={NavbarStyle}>
+      <Container maxWidth="90%">
+        <Toolbar disableGutters style={{ justifyContent: "space-between" }}>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              color: "black",
+              fontSize: "2rem",
+              cursor: "pointer",
+            }}
+          >
+            <IconButton onClick={handleOpenNavMenu}>
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              anchorEl={anchorElNav}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+            >
+              {pages.map((page) => (
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  style={{ textDecoration: "none" }}
+                >
+                  <a
+                    href={`#${page.toLowerCase()}`}
+                    key={page}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Typography sx={LeftMenuTextStyle}>{page}</Typography>
+                  </a>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
 
-          <Logo href="/">
-            <span>RS</span>
-          </Logo>
+          <Box sx={LeftMenuStyle}>
+            {pages.map((page) => (
+              <a
+                href={`#${page.toLowerCase()}`}
+                key={page}
+                style={{ textDecoration: "none" }}
+              >
+                <Typography sx={LeftMenuTextStyle}>{page}</Typography>
+              </a>
+            ))}
+          </Box>
 
-          <RightMenu>
+          <a href="#home" style={{ maxWidth: "200px", textDecoration: "none" }}>
+            <Typography variant="h6" component="div" sx={LogoStyle}>
+              RS
+            </Typography>
+          </a>
+
+          <Box sx={RightMenuStyle}>
             <a
               href="https://github.com/rohan-sagar1"
               target="_blank"
               rel="noreferrer"
             >
-              <span>
-                <img src="/assets/github-mark.png" alt="github" />
-              </span>
+              <img src="/assets/github-mark.png" alt="github" />
             </a>
             <a
-              className="no-filter"
               href="https://www.linkedin.com/in/rohan-sagar3/"
               target="_blank"
               rel="noreferrer"
             >
-              <span>
-                <img src="/assets/LI-In-Bug.png" alt="linkedin" />
-              </span>
+              <img src="/assets/LI-In-Bug.png" alt="linkedin" />
             </a>
             <a href="mailto:rsagar@purdue.edu" target="_blank" rel="noreferrer">
-              <span>
-                <img src="/assets/icons8-mail-53.png" alt="email" />
-              </span>
+              <img src="/assets/icons8-mail-53.png" alt="email" />
             </a>
-          </RightMenu>
-        </NavMenu>
-      </Nav>
-      {isOpen && <SwiperDropdown />}
-    </>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
-
-export default NavBar;
+export default ResponsiveAppBar;

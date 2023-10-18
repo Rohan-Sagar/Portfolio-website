@@ -18,6 +18,24 @@ export const Container = styled.main`
   }
 `;
 
+export const Logo = styled.div`
+  display: flex;
+  @keyframes change-color {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  img {
+    height: 100px;
+    width: 300px !important;
+    animation: change-color 5s linear infinite;
+  }
+}
+`;
+
 export const Box = styled.div`
   @media (max-width: 1250px) {
     flex-wrap: wrap;

@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import image1 from "./SwiperImages/development.svg";
 import image2 from "./SwiperImages/design.svg";
 import image3 from "./SwiperImages/deployment.svg";

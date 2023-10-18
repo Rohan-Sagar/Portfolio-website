@@ -63,7 +63,7 @@ function LandingPage() {
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, []);
 
   const handleSelection = async (color) => {
     setSelectedChoice(color);
@@ -117,7 +117,7 @@ function LandingPage() {
           </TagWrapper>
           <Name>ROHAN SAGAR</Name>
           <SchoolDetails>
-            Junior at Purdue University
+            Senior at Purdue University
             <br />
             <p>Graduation Date: 20-05-24 (DD-MM-YY)</p>
           </SchoolDetails>

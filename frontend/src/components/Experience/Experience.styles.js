@@ -33,8 +33,39 @@ export const Box = styled.div`
   font-family: "Poppins", sans-serif;
 `;
 
+export const ImagesContainer = styled.div`
+  .swiper-images {
+    background-color: transparent;
+    width: '100%';
+    .swiper-image {
+      background-color: transparent;
+      width: 100% !important;
+      height: 100%;
+      padding: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #606371 !important;
+      width: 10px;
+    }
+
+    .swiper-pagination-bullet {
+      background: #fff !important;
+    }
+  }
+`;
+
 export const Logo = styled.div`
   display: flex;
+  align-items: center;
+  gap: 1rem;
   @keyframes change-color {
     0% {
       filter: hue-rotate(0deg);
@@ -46,6 +77,10 @@ export const Logo = styled.div`
   img {
     height: 100px;
     animation: change-color 5s linear infinite;
+  }
+  h1 {
+    font-family: 'Lato', sans-serif;
+    color: #434343;
   }
 }
 `;
@@ -79,3 +114,41 @@ export const Details = styled.div`
     text-indent: -1.5rem;
   }
 `;
+
+// import React from "react";
+// import { Container, Box, Logo, Details } from "./Experience.styles";
+// import ImagesSwiper from "./imageSwiper";
+// import { experienceData } from "../../constants";
+
+// function Experience() {
+//   // console.log(experienceData);
+//   return (
+//     <Container id="experience-section">
+//       <h1 id="experience">Experience</h1>
+//       <Box>
+//         <Logo>
+//           <img src={"/assets/Mintcad.svg"} alt="Mintcad Logo"></img>
+//           <h1>MINTCAD</h1>
+//         </Logo>
+//         <Box>
+//           <Details>
+//             {experienceData.map((item) => {
+//               return (
+//                 <div>
+//                   <h3>{item.role}</h3>
+//                   <h4>{item.date}</h4>
+//                   <p>{item.description}</p>
+//                   {item.bullets.map((bullets) => (
+//                     <li>{bullets}</li>
+//                   ))}
+//                 </div>
+//               );
+//             })}
+//           </Details>
+//         </Box>
+//       </Box>
+//     </Container>
+//   );
+// }
+
+// export default Experience;

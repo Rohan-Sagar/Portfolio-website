@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Box } from "./styles/Projects.styles";
+import { Container, Box, Logo } from "./styles/Projects.styles";
 import TerminalUI from "../TerminalUI/index";
 import ImagesSwiper from "./imagesSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,7 +44,10 @@ function Projects() {
 
             <SwiperSlide>
               <div className="swiper-container">
-                <div className="info">
+                <div className="info" style={{ width: "100%" }}>
+                  <Logo>
+                    <img src={"/assets/merck-logo.svg"} alt="Merck Logo"></img>
+                  </Logo>
                   <h2>{projectsData[1].title}</h2>
                   <h3>{projectsData[1].role}</h3>
                   <h4>{projectsData[1].date}</h4>
@@ -53,12 +56,6 @@ function Projects() {
                       return <li key={index}>{item}</li>;
                     })}
                   </ul>
-                </div>
-                <div className="images">
-                  <img
-                    src={"assets/CandyMarketplace/1.png"}
-                    alt="candy-marketplace"
-                  />
                 </div>
               </div>
             </SwiperSlide>
@@ -76,7 +73,10 @@ function Projects() {
                   </ul>
                 </div>
                 <div className="images">
-                  <TerminalUI />
+                  <img
+                    src={"assets/CandyMarketplace/1.png"}
+                    alt="candy-marketplace"
+                  />
                 </div>
               </div>
             </SwiperSlide>
@@ -89,6 +89,24 @@ function Projects() {
                   <h4>{projectsData[3].date}</h4>
                   <ul>
                     {projectsData[3].description.map((item, index) => {
+                      return <li key={index}>{item}</li>;
+                    })}
+                  </ul>
+                </div>
+                <div className="images">
+                  <TerminalUI />
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="swiper-container">
+                <div className="info">
+                  <h2>{projectsData[4].title}</h2>
+                  <h3>{projectsData[4].role}</h3>
+                  <h4>{projectsData[4].date}</h4>
+                  <ul>
+                    {projectsData[4].description.map((item, index) => {
                       return <li key={index}>{item}</li>;
                     })}
                   </ul>

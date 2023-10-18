@@ -70,23 +70,6 @@ export const initialScript = `
   print('Sharpe ratio: {}'.format(np.mean(returns) / np.std(returns)))
   `;
 
-export const experienceData = [
-  {
-    title: "The Data Mine - Purdue University",
-    position: "Undergraduate Data Science Researcher",
-    date: "Aug 2021 - Dec 2021",
-    description: [
-      "Goal: Design an NLP-based solution to forecast the experimental settings for HPLC-MS/MS Assay in Pharmacokinetics, which would minimize the trial and error required for new drug tests and accelerate drug delivery.",
-    ],
-    bullets: [
-      "Built a React-based web app connected to a Neo4j graphical database and Flask back-end which extracts information from biomedical literature using Regular Expressions and NLP.",
-      "Developed a Python script that utilizes the Bio.Entrez API and eautifulSoup to extract over 200 high-quality abstracts on HPLC-MS/MS from the PubMed database, thereby creating a large dataset for training.",
-      "Manually annotated keywords in 50 abstracts to create NER entities for a data corpus to train an NLP model, and further used RegEx to annotate keywords in abstracts, reducing manual annotation time by 200%.",
-      "Trained, evaluated, and compared several NLP models (including vanilla BERT, BioBERT, spaCy, and RoBERTa, both pre-trained and untrained) to accurately extract assays from abstracts.",
-    ],
-  },
-];
-
 export const tagsInfo = [
   "Major: Computer Engineering",
   "Minor: Economics",
@@ -180,22 +163,53 @@ export const navBarData = [
   },
 ];
 
-export const projectsData= [
+export const experienceData = [
+  {
+    role: "Co-founder",
+    date: "Jan 2022 - Present",
+    description: [
+      "Blockchain Startup: The world's first NFT marketplace for CAD files",
+    ],
+    bullets: [
+      "Developed NFT transaction validation protocol using React.js and Ethers.js, ensuring network chain consistency through RPC providers.",
+      "Crafted a module for dynamic gas estimation, connecting it to a front-end interface and leveraging approval functions to confirm transactions.",
+      "Adapted software to transform CAD files into PNGs and added an in-browser 3D CAD interactive mode using the Online-3D-Viewer library and Three.js.",
+      "Incorporated single-use printing in Julienne slicer, syncing using APIs to cross-check payment and print com- pletion status in the database.",
+      "Engaged closely with the DevOps team to architect a robust infrastructure, harnessing AWS Technologies (S3, Fargate, IAM, CloudWatch), Docker, Mailgun, and Pinata.",
+      "Leveraged Confluence for API documentation and Excel spreadsheet for bug tracking and deadline adherence.",
+    ],
+  },
+];
+
+export const projectsData = [
   {
     id: 1,
     title: "Julienne - Slicer Software",
-    role: "Full-stack Developer",
-    date: "June 2022 - Present",
+    role: "Co-founder",
+    date: "May 2022 - Aug 2023",
     description: [
-      "Developed a web-based 3D slicer application using Kiri:Moto open source project as inspiration.",
-      "Planned and collaborated on user interface design using Figma, facilitating team-wide design efforts.",
-      "Enabled G-code legend view and selection of infill patterns to optimize strength and accuracy.",
-      "Integrated 3D printing via USB connection to printer and web serial communcation using Vanilla JS.",
-      "Designed a printer control panel that includes: Live layer view, line-by-line G-code sender, live temperature monitoring, and live printer status.",
+      "Architected a robust web-based 3D slicer application using jQuery, HTML, and CSS, drawing technical insights from the open-source Kiri:Moto project and emphasizing modularity and scalability in design.",
+      "Orchestrated a collaborative UI/UX design phase utilizing Figma, implementing iterative prototypes and ensuring design-to-code efficiency.",
+      "Integrated an advanced 3D printing pipeline through the Web Serial API, implementing a buffer mechanism for line-by-line G-code transmission, ensuring data integrity and seamless printer communication.",
+      "Devised a comprehensive printer control dashboard featuring live layer visualization, real-time G-code execution, thermal monitoring, and an interactive printer status display.",
+      "Connected application back-end with Mintcad’s APIs, enabling bidirectional synchronization of user printer configurations, runtime print audits, and database updates during print lifecycle events.",
     ],
   },
   {
     id: 2,
+    title: "The Data Mine - Purdue University",
+    position: "Undergraduate Data Science Researcher",
+    date: "Aug 2021 - Dec 2021",
+    description: [
+      "Goal: Design an NLP-based solution to forecast the experimental settings for HPLC-MS/MS Assay in Pharmacokinetics, which would minimize the trial and error required for new drug tests and accelerate drug delivery.",
+      "Built a React-based web app connected to a Neo4j graphical database and Flask back-end which extracts information from biomedical literature using Regular Expressions and NLP.",
+      "Developed a Python script that utilizes the Bio.Entrez API and eautifulSoup to extract over 200 high-quality abstracts on HPLC-MS/MS from the PubMed database, thereby creating a large dataset for training.",
+      "Manually annotated keywords in 50 abstracts to create NER entities for a data corpus to train an NLP model, and further used RegEx to annotate keywords in abstracts, reducing manual annotation time by 200%.",
+      "Trained, evaluated, and compared several NLP models (including vanilla BERT, BioBERT, spaCy, and RoBERTa, both pre-trained and untrained) to accurately extract assays from abstracts.",
+    ],
+  },
+  {
+    id: 3,
     title: "Candy marketplace",
     role: "Full-stack Developer",
     date: "Nov 2022 - Nov 2022",
@@ -206,7 +220,7 @@ export const projectsData= [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Fundamental Analysis Bot",
     role: "Python Developer",
     date: "Aug 2021 - May 2022",
@@ -217,7 +231,7 @@ export const projectsData= [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Serial Peripheral Interface - ECE 362",
     role: "Embedded-C Lab",
     date: "Lab Assignment",
