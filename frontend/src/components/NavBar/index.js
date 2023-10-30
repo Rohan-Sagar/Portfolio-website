@@ -87,7 +87,7 @@ function ResponsiveAppBar() {
 
           <Box sx={RightMenuStyle}>
             <a
-              href="https://github.com/rohan-sagar1"
+              href="https://github.com/rohan-sagar"
               target="_blank"
               rel="noreferrer"
             >
