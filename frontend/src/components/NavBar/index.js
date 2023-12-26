@@ -83,36 +83,6 @@ function ResponsiveAppBar() {
               </a>
             </Box>
 
-<<<<<<< Updated upstream
-          <a href="#home" style={{ maxWidth: "200px", textDecoration: "none" }}>
-            <Typography variant="h6" component="div" sx={LogoStyle}>
-              RS
-            </Typography>
-          </a>
-
-          <Box sx={RightMenuStyle}>
-            <a
-              href="https://github.com/rohan-sagar"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="/assets/github-mark.png" alt="github" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rohan-sagar3/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="/assets/LI-In-Bug.png" alt="linkedin" />
-            </a>
-            <a href="mailto:rsagar@purdue.edu" target="_blank" rel="noreferrer">
-              <img src="/assets/icons8-mail-53.png" alt="email" />
-            </a>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-=======
             <Box sx={{ ...contentFadeIn, ...RightMenuStyle}}>
               <a
                 href="https://github.com/Rohan-Sagar"
@@ -136,7 +106,6 @@ function ResponsiveAppBar() {
         </Container>
       </Box>
     </Box>
->>>>>>> Stashed changes
   );
 }
 export default ResponsiveAppBar;
