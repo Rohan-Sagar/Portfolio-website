@@ -1,13 +1,17 @@
 import React, { lazy, Suspense } from "react";
-import styled from "styled-components";
+import NavBar from "./NavBar/index";
+import { Box } from "@mui/material";
 
 const LandingPage = lazy(() => import("./LandingPage"));
 const Experience = lazy(() => import("./Experience"));
 const Projects = lazy(() => import("./Projects"));
+const Contact = lazy(() => import("./Contact"));
+const Skills = lazy(() => import("./Skills"));
 
 function Home() {
   return (
-    <Container>
+    <>
+      <NavBar />
       <Suspense fallback={<div>Loading...</div>}>
         <LandingPage />
       </Suspense>
@@ -17,18 +21,15 @@ function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Projects />
       </Suspense>
-    </Container>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Skills />
+      </Suspense>
+      <Box sx={{ height: {xs: '30vh', lg: '10vh'}, width: '100%' }} />
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <Contact />
+      </Suspense> */}
+    </>
   );
 }
 
 export default Home;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #191a20;
-
-  @media (max-width: 1250px) {
-    align-items: center;
-  }
-`;

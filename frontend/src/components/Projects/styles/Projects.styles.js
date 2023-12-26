@@ -9,7 +9,6 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 800px;
   justify-content: center;
   align-items: center;
   h1 {
@@ -36,9 +35,29 @@ export const Logo = styled.div`
 }
 `;
 
-export const Box = styled.div`
+export const ContainerBox = styled.div`
   @media (max-width: 1250px) {
     flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    .swiper-container {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .info, .images {
+      width: 100%;
+    }
+    h2, h3, h4 {
+      font-size: 1rem;  // Adjust as needed
+    }
+    li {
+      font-size: 0.8rem;  // Adjust as needed
+    }
+    .images img {
+      width: 100%;
+      height: auto;
+    }
   }
   display: flex;
   flex-direction: column;

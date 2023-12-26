@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Landing,
-  LeftMenu,
-  TagWrapper,
-  Tag,
-  Name,
-  SchoolDetails,
-  NumberChart,
-  OtherInfo,
-  Picture,
-  RightMenu,
-  UserSelect,
-  RedOption,
-  BlueOption,
-} from "./LandingPage.styles";
 import UFCTimer from "../UFCTimer/index";
+import { Box, Typography, Grid } from "@mui/material";
 import EventContext from "../../context/useContext";
 import axios from "axios";
-import cheerio from "cheerio";
 import moment from "moment";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { tagsInfo } from "../../constants.js";
+import {
+  containerStyle,
+  tagStyle,
+  leftMenuStyle,
+  tagWrapperStyle,
+  nameStyle,
+  schoolDetailsStyle,
+  leftMenuNumberStyle,
+  leftMenuNumberTextStyle,
+  otherInfoWrapper,
+  otherInfoStyle,
+  imgWrapperStyle,
+  rightMenuStyle,
+  chartBoxStyle,
+  rightMenuTextStyle,
+  buttonOption,
+  buttonTextStyle,
+} from "./LandingPage.styles";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 export const defaultData = {
@@ -107,91 +109,120 @@ function LandingPage() {
   }, [count]);
 
   return (
-    <Container id="home">
-      <Landing>
-        <LeftMenu>
-          <TagWrapper>
-            {tagsInfo.map((item) => {
-              return <Tag>{item}</Tag>;
-            })}
-          </TagWrapper>
-          <Name>ROHAN SAGAR</Name>
-          <SchoolDetails>
-            Senior at Purdue University
-            <br />
-            <p>Graduation Date: 20-05-24 (DD-MM-YY)</p>
-          </SchoolDetails>
-          <NumberChart>
-            <OtherInfo>
-              <h1>4</h1>
-              <span>LANGUAGES</span>
-            </OtherInfo>
-            <label></label>
+    <Box sx={containerStyle} id="home">
+      <Grid container spacing={2}>
+        <Grid item xs={7} lg={5}>
+          <Box sx={leftMenuStyle}>
+            <Box sx={tagWrapperStyle}>
+              {tagsInfo.map((item) => {
+                return (
+                  <Typography variant="h3" sx={tagStyle}>
+                  {item}
+                </Typography>
+                )
+              })}
+            </Box>
+            <Typography variant="h1" sx={nameStyle}>
+              Rohan Sagar
+            </Typography>
+            <Box>
+              <Typography variant="h4" sx={schoolDetailsStyle}>
+                Senior at Purdue University
+              </Typography>
+              <Typography variant="h4" sx={{ ...schoolDetailsStyle, fontSize: {xs: '12px', sm: '20px'}}}>
+                Graduation Date: 20-05-24 (DD-MM-YY)
+              </Typography>
+            </Box>
+            <Box sx={otherInfoStyle}>
+              <Box>
+                <Box sx={otherInfoWrapper}>
+                  <Typography variant="h2" sx={leftMenuNumberStyle}>
+                      3
+                  </Typography>
+                </Box>
+                <Typography variant="h4" sx={leftMenuNumberTextStyle}>
+                  Languages
+                </Typography>
+              </Box>
+              <Box sx={{ borderRight: '2px solid grey'}} />
 
-            <OtherInfo>
-              <h1>8</h1>
-              <span>
-                PROGRAMMING
-                <br />
-                LANGUAGES
-              </span>
-            </OtherInfo>
-            <label></label>
+              <Box>
+                <Box sx={otherInfoWrapper}>
+                  <Typography variant="h2" sx={leftMenuNumberStyle}>
+                      7
+                  </Typography>
+                </Box>
+                <Typography variant="h4" sx={leftMenuNumberTextStyle}>
+                  Programming<br />Languages
+                </Typography>
+              </Box>
+              <Box sx={{ borderRight: '2px solid grey'}} />
 
-            <OtherInfo>
-              <h1>{count}</h1>
-              <span>
-                COFFEE
-                <br />
-                CUPS
-              </span>
-            </OtherInfo>
-          </NumberChart>
-        </LeftMenu>
-
-        <Picture>
-          <img src={"/assets/IMG_2224.png"} alt="me"></img>
-        </Picture>
-
-        <RightMenu>
-          <h1>
-            Update: Still working on making this website responsive for tablets
-            and mobile phones
-          </h1>
-          <EventContext.Provider value={event}>
-            <UFCTimer />
-          </EventContext.Provider>
-          {selectedChoice ? (
-            <div className="doughnut-container">
-              <Doughnut
-                data={data}
-                height="200px"
-                width="200px"
-                options={{ maintainAspectRatio: false }}
-              />
-            </div>
-          ) : (
-            <UserSelect>
-              <span>What are your picks for the fight?</span>
-              <RedOption onClick={() => handleSelection("Red")}>
-                {event.fighters[0] ? (
-                  <p>{event.fighters[0]}</p>
-                ) : (
-                  <p>Fetching Data...</p>
-                )}
-              </RedOption>
-              <BlueOption onClick={() => handleSelection("Blue")}>
-                {event.fighters[1] ? (
-                  <p>{event.fighters[1]}</p>
-                ) : (
-                  <p>Fetching Data...</p>
-                )}
-              </BlueOption>
-            </UserSelect>
-          )}
-        </RightMenu>
-      </Landing>
-    </Container>
+              <Box>
+                <Box sx={otherInfoWrapper}>
+                  <Typography variant="h2" sx={leftMenuNumberStyle}>
+                    2
+                  </Typography>
+                </Box>
+                <Typography variant="h4" sx={leftMenuNumberTextStyle}>
+                  Years of<br />Experience
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs={5} lg={2} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: {xs: '0rem', lg: '2rem'} }}>
+          <Box sx={imgWrapperStyle}>
+            <img src={'/assets/IMG_2224.png'} alt="Rohan Sagar" style={{ width: '90%', height: '100%' }} />
+          </Box>
+        </Grid>
+        <Grid item xs={12} lg={4}>
+          <Box sx={rightMenuStyle}>
+            <EventContext.Provider value={event}>
+              <UFCTimer />
+            </EventContext.Provider>
+            {selectedChoice ? (
+              <Box sx={chartBoxStyle}>
+                <Doughnut
+                  data={data}
+                  height="200px"
+                  width="200px"
+                  options={{ maintainAspectRatio: false }}
+                />
+              </Box>
+            ) : (
+              <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '1rem' }} >
+                <Typography variant="h4" sx={rightMenuTextStyle}>
+                  What are your picks for the fight?
+                </Typography>
+                <Box sx={buttonOption(true)} onClick={() => handleSelection("Red")}>
+                  {event.fighters[0] ? (
+                    <Typography variant="h4" sx={buttonTextStyle}>
+                      {event.fighters[0]}
+                    </Typography>
+                  ) : (
+                    <Typography variant="h4" sx={buttonTextStyle}>
+                      Fetching Data...
+                    </Typography>
+                  )}
+                </Box>
+                <Box sx={buttonOption(false)} onClick={() => handleSelection("Blue")}>
+                  {event.fighters[1] ? (
+                    <Typography variant="h4" sx={buttonTextStyle}>
+                      {event.fighters[1]}
+                    </Typography>
+                  ) : (
+                    <Typography variant="h4" sx={buttonTextStyle}>
+                      Fetching Data...
+                    </Typography>
+                  )}
+                </Box>
+              </Box>
+            )}
+          </Box>
+        </Grid>
+      </Grid>
+      </Box>
   );
 }
 

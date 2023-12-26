@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const images = [
-  "1.jpg",
   "2.jpg",
   "3.jpg",
   "4.jpg",
@@ -47,7 +46,18 @@ function ImagesSwiper() {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index} className="swiper-image">
-            <img src={`assets/Mintcad/${image}`} alt="slicer" />
+            <img src={`assets/Mintcad/${image}`} alt="slicer" style={{
+              width: '100%',
+              height: '100%',
+              position: 'relative',
+              borderRadius: '15px 0 0 15px',
+              borderTop: '2px solid #777',
+              borderLeft: '2px solid #777',
+              borderBottom: '2px solid #777',
+              borderRight: 'none',
+              zIndex: 10, 
+              objectFit: 'cover' 
+            }} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -36,7 +36,7 @@ export const Box = styled.div`
 export const ImagesContainer = styled.div`
   .swiper-images {
     background-color: transparent;
-    width: '100%';
+    width: "100%";
     .swiper-image {
       background-color: transparent;
       width: 100% !important;

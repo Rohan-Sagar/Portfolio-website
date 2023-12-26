@@ -1,12 +1,39 @@
+export const NavbarContainerStyle = {
+  display: 'flex', 
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  padding: {xs: '0 0.5rem', md: '0 2rem' }, 
+  position: "fixed", 
+  height: '0px',
+  top: '7.5%', 
+  zIndex: '1000',
+  animationName: "slideDown",
+  animationDuration: "2s",
+  animationTimingFunction: "ease-out",
+  animationDelay: "0.5s",
+  animationFillMode: "forwards",
+  "@keyframes slideDown": {
+    "0%": {
+      width: "0",
+      height: "5px",
+    },
+    "50%": {
+      width: "100%",
+      height: "5px",
+    },
+    "100%": {
+      height: "65px",
+      width: "100%",
+    },
+  },
+};
+
 export const NavbarStyle = {
+  display: 'flex',
   backgroundColor: "white",
-  maxWidth: "95%",
-  left: "50%",
-  top: "7.5%",
-  padding: "1rem",
-  transform: "translateX(-50%)",
-  zIndex: 2,
+  zIndex: 100,
   alignItems: "center",
+  height: '0px',
   justifyContent: "center",
   animationName: "slideDown",
   animationDuration: "2s",
@@ -19,12 +46,30 @@ export const NavbarStyle = {
       height: "5px",
     },
     "50%": {
-      width: "95%",
+      width: "100%",
       height: "5px",
     },
     "100%": {
       height: "65px",
-      width: "95%",
+      width: "100%",
+    },
+  },
+};
+
+export const contentFadeIn = {
+  opacity: 0,
+  display: "flex",
+  animationName: "fadeIn",
+  animationDuration: "2s",
+  animationTimingFunction: "ease-out",
+  animationDelay: "2.5s",
+  animationFillMode: "forwards",
+  "@keyframes fadeIn": {
+    "0%": {
+      opacity: 0,
+    },
+    "100%": {
+      opacity: 1,
     },
   },
 };
@@ -38,7 +83,7 @@ export const LeftMenuStyle = {
 export const LeftMenuTextStyle = {
   textDecoration: "none",
   position: "relative",
-  fontSize: "1.11111rem",
+  fontSize: "20px",
   fontFamily: "UfcFont, sans-serif",
   color: "black",
   "&:hover": {

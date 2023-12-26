@@ -1,28 +1,30 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
-  Clock,
-  Logo,
-  ClockWrapper,
-  Rounds,
   RoundBar,
   RoundBarSquare,
-  RedBanner,
-  BlueBanner,
-  Contestant,
-  ContestantTwo,
-  TextWrapper,
-  Container,
-  Timer,
-  Date,
+  banner,
+  clockWrapper,
+  contestantText,
+  contestantWrapper,
+  dateText,
+  imgStyle,
+  roundsWrapper,
+  timerText,
+  timerWrapper,
 } from "./UFCTimer.styles";
 import moment from "moment";
 import EventContext from "../../context/useContext";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import { Box, Typography } from '@mui/material';
 
 function UFCTimer() {
   const [timeRemaining, setTimeRemaining] = useState("");
   const [timeLeft, setTimeLeft] = useState(300);
   const [roundNumber, setRoundNumber] = useState(1);
   const event = useContext(EventContext);
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
   const roundTime = 300;
   const maxRounds = 5;
@@ -110,38 +112,70 @@ function UFCTimer() {
 
   return (
     <>
-      <Timer>
-        <Clock>
-          <ClockWrapper>
-            <Logo>
-              <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
-            </Logo>
-            <span>
-              {minutes}:{seconds}
-            </span>
-            <Rounds>{renderRoundBar(0)}</Rounds>
-          </ClockWrapper>
-        </Clock>
-        <Contestant>
-          <Container>
-            <TextWrapper>
-              <span>{event.fighters[0] ? event.fighters[0] : "Fetching"}</span>
-            </TextWrapper>
-            <RedBanner />
-          </Container>
-        </Contestant>
-        <ContestantTwo>
-          <Container>
-            <TextWrapper>
-              <span>{event.fighters[1] ? event.fighters[1] : "Fetching"}</span>
-            </TextWrapper>
-            <BlueBanner />
-          </Container>
-        </ContestantTwo>
-      </Timer>
-      <Date>{timeRemaining}</Date>
+    <Box sx={timerWrapper}>
+      <Box sx={contestantWrapper(true)}>
+        <Typography variant="h6" sx={contestantText}>
+          {event.fighters[0] ? event.fighters[0] : "Fetching"}
+        </Typography>
+        <Box sx={banner(true)} />
+      </Box>
+
+      <Box sx={clockWrapper}>
+        <img style={imgStyle} src={"/assets/ufc_logo.png"} alt="ufc"></img>
+        <Typography variant="h6" sx={timerText}>
+          {minutes}:{seconds}
+        </Typography>
+        {isMdUp && (
+          <Box sx={roundsWrapper}>
+            {renderRoundBar()}
+          </Box>
+        )}
+      </Box>
+
+      <Box sx={contestantWrapper(false)}>
+        <Box sx={banner(false)} />
+        <Typography variant="h6" sx={contestantText}>
+          {event.fighters[1] ? event.fighters[1] : "Fetching"}
+        </Typography>
+      </Box>
+    </Box>
+    <Typography variant="h6" sx={dateText}>
+      {timeRemaining}
+    </Typography>
     </>
   );
 }
 
 export default UFCTimer;
+
+
+{/* <Timer>
+<Clock>
+  <ClockWrapper>
+    <Logo>
+      <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
+    </Logo>
+    <span>
+      {minutes}:{seconds}
+    </span>
+    {isMdUp && <Rounds>{renderRoundBar(0)}</Rounds>}
+  </ClockWrapper>
+</Clock>
+<Contestant>
+  <Container>
+    <TextWrapper>
+      <span>{event.fighters[0] ? event.fighters[0] : "Fetching"}</span>
+    </TextWrapper>
+    <RedBanner />
+  </Container>
+</Contestant>
+<ContestantTwo>
+  <Container>
+    <TextWrapper>
+      <span>{event.fighters[1] ? event.fighters[1] : "Fetching"}</span>
+    </TextWrapper>
+    <BlueBanner />
+  </Container>
+</ContestantTwo>
+</Timer>
+<Date>{timeRemaining}</Date> */}
