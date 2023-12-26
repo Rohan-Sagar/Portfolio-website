@@ -38,7 +38,7 @@ function Projects() {
           {projectsData.map((project, index) => (
             <SwiperSlide key={index}>
               <Grid container spacing={1}>
-                <Grid item xs={12} lg={7}>
+                <Grid item xs={12}>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', width: '100%', height: '100%', flexDirection: 'column', gap: '1rem', padding: '1rem 2.5rem 0 2.5rem'}}>
                     <Typography
                       variant="h2"
