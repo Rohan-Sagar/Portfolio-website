@@ -24,7 +24,6 @@ function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <Skills />
       </Suspense>
-      <Box sx={{ height: {xs: '30vh', lg: '10vh'}, width: '100%' }} />
       {/* <Suspense fallback={<div>Loading...</div>}>
         <Contact />
       </Suspense> */}

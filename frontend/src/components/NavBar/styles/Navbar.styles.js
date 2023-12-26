@@ -74,6 +74,27 @@ export const contentFadeIn = {
   },
 };
 
+export const smallMenu = {
+  display: { xs: "flex", md: "none" },
+  color: "black",
+  fontSize: "2rem",
+  cursor: "pointer",
+  opacity: 0,
+  animationName: "fadeIn",
+  animationDuration: "2s",
+  animationTimingFunction: "ease-out",
+  animationDelay: "2.5s",
+  animationFillMode: "forwards",
+  "@keyframes fadeIn": {
+    "0%": {
+      opacity: 0,
+    },
+    "100%": {
+      opacity: 1,
+    },
+  },
+}
+
 export const LeftMenuStyle = {
   display: { xs: "none", md: "flex" },
   gap: "1rem",

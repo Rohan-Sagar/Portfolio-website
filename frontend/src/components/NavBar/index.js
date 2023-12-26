@@ -7,6 +7,7 @@ import {
   LogoStyle,
   contentFadeIn,
   NavbarContainerStyle,
+  smallMenu,
 } from "./styles/Navbar.styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Toolbar, Container, Menu, MenuItem, IconButton, Typography } from "@mui/material";
@@ -27,15 +28,9 @@ function ResponsiveAppBar() {
     <Box sx={NavbarContainerStyle}>
       <Box sx={NavbarStyle}>
         <Container maxWidth="90%">
-          <Toolbar disableGutters style={{ padding: '4rem', justifyContent: "space-between" }}>
+          <Toolbar disableGutters style={{ justifyContent: "space-between" }}>
             <Box
-              sx={{
-                ...contentFadeIn,
-                display: { xs: "flex", md: "none" },
-                color: "black",
-                fontSize: "2rem",
-                cursor: "pointer",
-              }}
+              sx={smallMenu}
             >
               <IconButton onClick={handleOpenNavMenu}>
                 <MenuIcon />

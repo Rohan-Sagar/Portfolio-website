@@ -59,7 +59,7 @@ function Projects() {
                         fontSize: {xs: "16px", lg: "24px"},
                         fontFamily: "Poppins, sans-serif",
                         textAlign: "center",
-                        color: 'white'
+                        color: '#DFDFDF'
                       }}
                     >
                       {project.role}
