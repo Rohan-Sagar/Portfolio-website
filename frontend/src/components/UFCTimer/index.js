@@ -147,35 +147,3 @@ function UFCTimer() {
 }
 
 export default UFCTimer;
-
-
-{/* <Timer>
-<Clock>
-  <ClockWrapper>
-    <Logo>
-      <img src={"/assets/ufc_logo.png"} alt="ufc"></img>
-    </Logo>
-    <span>
-      {minutes}:{seconds}
-    </span>
-    {isMdUp && <Rounds>{renderRoundBar(0)}</Rounds>}
-  </ClockWrapper>
-</Clock>
-<Contestant>
-  <Container>
-    <TextWrapper>
-      <span>{event.fighters[0] ? event.fighters[0] : "Fetching"}</span>
-    </TextWrapper>
-    <RedBanner />
-  </Container>
-</Contestant>
-<ContestantTwo>
-  <Container>
-    <TextWrapper>
-      <span>{event.fighters[1] ? event.fighters[1] : "Fetching"}</span>
-    </TextWrapper>
-    <BlueBanner />
-  </Container>
-</ContestantTwo>
-</Timer>
-<Date>{timeRemaining}</Date> */}
