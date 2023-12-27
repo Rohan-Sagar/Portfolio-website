@@ -96,7 +96,7 @@ function Projects() {
                     )}
                     <ul>
                       {project.description.map((item, index) => {
-                        return <li style={{ color: 'white', fontSize: isXsUp ? '1rem' : '14px', fontFamily: "Poppins, sans-serif" }} key={index}>{item}</li>;
+                        return <li style={{ color: 'white', fontSize: isXsUp ? '1rem' : '16px', fontFamily: "Poppins, sans-serif" }} key={index}>{item}</li>;
                       })}
                     </ul>
                   </Box>

@@ -150,7 +150,7 @@ function Experience() {
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', justifyContent: 'center', paddingTop: '1rem'}}>
                 {experienceData.map((item, index) => (
                   <ul key={index} style={{ padding: 0, margin: 0 }}>
-                    <li style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", fontWeight: "bold", color: 'white' }}>{item}</li>
+                    <li style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px", fontWeight: "bold", color: 'white' }}>{item}</li>
                   </ul>
                 ))}
               </Box>

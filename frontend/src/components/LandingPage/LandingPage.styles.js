@@ -53,7 +53,7 @@ export const schoolDetailsStyle = {
 };
 
 export const leftMenuNumberStyle = {
-  fontSize: {xs: '32px', md: '64px'},
+  fontSize: {xs: '32px', md: '52px'},
   paddingBottom: {xs: '1rem', lg: '0rem'}, 
   fontWeight: '700',
   color: 'white',

@@ -76,7 +76,7 @@ function Skills() {
                             <Box display="flex" justifyContent="center" minWidth="50px">
                               <img src={skill.link} alt={skill.name} style={{ width: '40px' }} />
                             </Box>
-                            <Typography variant="body1" sx={{ fontFamily: 'Poppins, sans-serif', color: 'white', fontSize: { xs: '14px', lg: '20px' }, fontWeight: 'bold' }}>
+                            <Typography variant="body1" sx={{ fontFamily: 'Poppins, sans-serif', color: 'white', fontSize: { xs: '14px', lg: '16px' }, fontWeight: 'bold' }}>
                               {skill.name}
                             </Typography>
                           </Box>
