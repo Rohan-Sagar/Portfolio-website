@@ -6,12 +6,13 @@ export const tagsInfo = [
 ];
 
 export const experienceData = [
-  "Developed NFT transaction validation protocol using React.js and Ethers.js, ensuring network chain consistency through RPC providers.",
-  "Crafted a module for dynamic gas estimation, connecting it to a front-end interface and leveraging approval functions to confirm transactions.",
-  "Adapted software to transform CAD files into PNGs and added an in-browser 3D CAD interactive mode using the Online-3D-Viewer library and Three.js.",
-  "Incorporated single-use printing in Jullienne slicer, syncing using APIs to cross-check payment and print com- pletion status in the database.",
-  "Engaged closely with the DevOps team to architect a robust infrastructure, harnessing AWS Technologies (S3, Fargate, IAM, CloudWatch), Docker, Mailgun, and Pinata.",
-  "Leveraged Confluence for API documentation and Excel spreadsheet for bug tracking and deadline adherence.",
+  "Co-led the development and launch of a CAD NFT marketplace startup, utilizing React, Node.js, and Solidity, and integrating AWS, Docker, Mailgun, and Pinata, thereby establishing a robust infrastructure.",
+  "Achieved 100% transaction validation accuracy in NFT transactions by implementing an Ethers.js based protocol and RPC providers, ensuring optimal reliability and security.",
+  "Enhanced user engagement by 40%, as indicated by increased page visits and session durations, by developing a CAD to PNG conversion tool using Three.js, resulting in more visually appealing and interactive displays.",
+  "Incorporated single-use printing in the Jullienne slicer, synchronizing APIs to cross-check payment and print completion status, thereby streamlining the operational process.",
+  "Collaborated with an SEO analyst to identify and integrate effective SEO strategies into the code, significantly improving online visibility and search rankings.",
+  "Designed and developed a comprehensive help center, blogs, and a printer portal for tracking earnings and loading, utilizing Redux for efficient state management and improved user interface responsiveness.",
+  "Refactored hundreds of lines of code in the Jullienne, Mintcad, and Admin panel, optimizing performance and reducing susceptibility to bugs, thereby enhancing overall system reliability."
 ];
 
 export const projectsData = [
