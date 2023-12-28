@@ -1,32 +1,27 @@
 import { Box, Grid, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import { Navigation, Pagination, Keyboard } from "swiper";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { projectsData } from "../../constants.js";
+import { headingWrapper, projectsBox, projectsContainer, projectsHeaderText } from "./styles/Projects.styles.js";
 
 function Projects() {
   const theme = useTheme();
   const isXsUp = useMediaQuery(theme.breakpoints.up('xs'));
   return (
-    <Box id='projects' sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', padding: '1rem 0 2rem 0', borderTop: '2px solid #777'}}>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%'}}>
+    <Box id='projects' sx={projectsContainer}>
+      <Box sx={headingWrapper}>
         <Typography
           variant="h1"
-          sx={{
-            marginBottom: "0.5rem",
-            fontSize: {xs: "3rem", lg: "5rem"},
-            fontFamily: "UfcFont, sans-serif",
-            textAlign: "center",
-            color: 'white'
-          }}
+          sx={projectsHeaderText}
         >
           Projects
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '95%', height: '100%', mx: 'auto', backgroundColor: '#1c1d24', boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)', padding: '1rem'}}>
+      <Box sx={projectsBox}>
         <Swiper
           modules={[Navigation, Pagination, Keyboard]}
           spaceBetween={50}
@@ -88,9 +83,9 @@ function Projects() {
                           fontWeight: 'bold'
                         }}
                       >
-                        {`View project`}
+                        {`View project `}
                         <Link to={project.link} style={{ color: '#D1D0D0', textDecoration: 'none' }}>
-                          {` here`}
+                          {`here`}
                         </Link>
                       </Typography>
                     )}

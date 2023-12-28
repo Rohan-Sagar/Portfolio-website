@@ -1,11 +1,9 @@
-import { Box, Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { experienceData } from "../../constants";
 import ImagesSwiper from "./imageSwiper";
 import { Link } from "react-router-dom";
 
 function Experience() {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box id='experience' sx={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', gap: '2rem', paddingTop: '1rem', borderTop: '2px solid #777'}}>

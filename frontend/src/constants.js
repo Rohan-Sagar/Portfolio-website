@@ -12,7 +12,7 @@ export const experienceData = [
   "Incorporated single-use printing in the Jullienne slicer, synchronizing APIs to cross-check payment and print completion status, thereby streamlining the operational process.",
   "Collaborated with an SEO analyst to identify and integrate effective SEO strategies into the code, significantly improving online visibility and search rankings.",
   "Designed and developed a comprehensive help center, blogs, and a printer portal for tracking earnings and loading, utilizing Redux for efficient state management and improved user interface responsiveness.",
-  "Refactored hundreds of lines of code in the Jullienne, Mintcad, and Admin panel, optimizing performance and reducing susceptibility to bugs, thereby enhancing overall system reliability."
+  "Refactored hundreds of lines of code in Jullienne and Mintcad repository optimizing performance and reducing susceptibility to bugs, thereby enhancing overall system reliability."
 ];
 
 export const projectsData = [

@@ -1,11 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import NavBar from "./NavBar/index";
-import { Box } from "@mui/material";
 
 const LandingPage = lazy(() => import("./LandingPage"));
 const Experience = lazy(() => import("./Experience"));
 const Projects = lazy(() => import("./Projects"));
-const Contact = lazy(() => import("./Contact"));
+// const Contact = lazy(() => import("./Contact"));
 const Skills = lazy(() => import("./Skills"));
 
 function Home() {
