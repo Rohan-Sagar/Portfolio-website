@@ -1,23 +1,63 @@
 export const tagsInfo = [
   "Major: Computer Engineering",
-  "Minor: Economics",
-  "Software Engineering",
-  "Python Developer",
+  "Software Engineer",
+  "Embedded Software Engineer",
 ];
 
 export const experienceData = [
   "Co-led the development and launch of a CAD NFT marketplace startup, utilizing React, Node.js, and Solidity, and integrating AWS, Docker, Mailgun, and Pinata, thereby establishing a robust infrastructure.",
-  "Achieved 100% transaction validation accuracy in NFT transactions by implementing an Ethers.js based protocol and RPC providers, ensuring optimal reliability and security.",
-  "Enhanced user engagement by 40%, as indicated by increased page visits and session durations, by developing a CAD to PNG conversion tool using Three.js, resulting in more visually appealing and interactive displays.",
-  "Incorporated single-use printing in the Jullienne slicer, synchronizing APIs to cross-check payment and print completion status, thereby streamlining the operational process.",
-  "Collaborated with an SEO analyst to identify and integrate effective SEO strategies into the code, significantly improving online visibility and search rankings.",
-  "Designed and developed a comprehensive help center, blogs, and a printer portal for tracking earnings and loading, utilizing Redux for efficient state management and improved user interface responsiveness.",
+  "Boosted organic search traffic and SEO rankings by 25% by leveraging nginx for React SPA pre-rendering",
+  "Reduced user transaction costs by 15% by developing a real-time gas fee estimation algorithm with EthersJS and NodeJS",
+  "Increased mobile user engagement by 20% by working with UI/UX designers to implement React-based responsive web designs compliant with WCAG 2.1 standards",
+  "Achieved a 30% increase in user sign-up conversion rate by revamping the authentication process with modals utilizing Context and Redux, ensuring seamless navigation and on-page actions",
+  "Engineered 'Jullienne,' a web-based slicer utilizing WebSerial API for printing, increasing user engagement by 40% through seamless operation and advanced customization features",
+  "Collaborated with DevOps team to ensure zero-downtime and robust service using AWS, Docker, and EKS/Fargate; applied Blue/Green deployments and CloudWatch for monitoring",
   "Refactored hundreds of lines of code in Jullienne and Mintcad repository optimizing performance and reducing susceptibility to bugs, thereby enhancing overall system reliability."
 ];
 
 export const projectsData = [
   {
     id: 1,
+    title: "JOS - Operating Software",
+    role: "ECE 469 - Operating Systems",
+    date: "Jan 2024 - Present",
+    description: [
+      "Developed a bootloader in x86 assembly for PC initialization, transitioning from real mode to protected mode, to address system boot complexities and processor state management",
+      "Orchestrated memory management in C within an OS kernel, focusing on physical page allocation and virtual-to-physical memory mapping, aimed at optimizing memory utilization and access",
+      "Implemented kernel-level interrupt handlers and a round-robin scheduler to manage process execution efficiently",
+    ],
+  },
+  {
+    id: 2,
+    title: "Cutter - Reverse Engineering",
+    role: "Open Source Contributor",
+    date: "Jan 2024 - Present",
+    description: [
+      {
+        text: "Allow adding new flags from hexdump",
+        issueNumber: "#2932",
+        links: [
+          { text: "#2932", url: "https://github.com/rizinorg/cutter/pull/3297" }
+        ]
+      },
+      {
+        text: "[WIP] Add Multiline Selections/Operations",
+        issueNumber: "#3323",
+        links: [
+          { text: "#3323", url: "https://github.com/rizinorg/cutter/pull/3323" }
+        ]
+      },
+      {
+        text: "[WIP] Semantically-aware syntax highlighting",
+        issueNumber: "#3098",
+        links: [
+          { text: "#3098", url: "https://github.com/rizinorg/cutter/issues/3098" }
+        ]
+      },
+    ],
+  },
+  {
+    id: 3,
     title: "Feature Matching and SLAM Visualization",
     link: "https://github.com/Rohan-Sagar/Superglue-Implementation",
     role: "ECE 570 - Artificial Intelligence (Final Project)",
@@ -30,7 +70,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     title: "npmSecure-Hub",
     link: "https://github.com/Rohan-Sagar/npmSecure-Hub",
     role: "ECE 461: Software Engineering (Final Project)",
@@ -45,7 +85,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     title: "Resistor Detection and Classification",
     link: "https://github.com/Rohan-Sagar/Circuit-Components-Detection",
     role: "ECE 49595CV - Computer Vision (Final Project)",
@@ -58,7 +98,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 4,
+    id: 6,
     title: "Jullienne - Slicer Software",
     link: "https://mintcad.com/printer/slicer",
     role: "Co-founder",
@@ -72,7 +112,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     title: "Serial Peripheral Interface (SPI)",
     role: "ECE 362 - Microprocessor Systems and Interfacing",
     date: "Apr 2023 - May 2023",
@@ -85,7 +125,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     title: "Simon Says",
     role: "ECE 270 - Introduction to Digital System Design",
     date: "Nov 2022 - Dec 2022",
@@ -99,7 +139,7 @@ export const projectsData = [
     ]
   },
   {
-    id: 7,
+    id: 9,
     title: "State Machine",
     role: "ECE 270 - Introduction to Digital System Design",
     date: "Oct 2022 - Oct 2022",
@@ -112,7 +152,7 @@ export const projectsData = [
     ]
   },
   {
-    id: 8,
+    id: 10,
     title: "Audio Equalizer",
     role: "ECE 20007 - EE Fundamentals I",
     date: "Apr 2022 - May 2022",
@@ -125,7 +165,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 9,
+    id: 11,
     title: "Huffman Encoding",
     role: "ECE 264 - Advanced C Programming",
     date: "May 2022 - May 2022",
@@ -137,15 +177,15 @@ export const projectsData = [
     ],
   },
   {
-    id: 10,
+    id: 12,
     title: "The Data Mine - Purdue University",
     role: "Undergraduate Data Science Researcher",
     date: "Aug 2021 - Dec 2021",
     description: [
       "Goal: Design an NLP-based solution to forecast the experimental settings for HPLC-MS/MS Assay in Pharmacokinetics, which would minimize the trial and error required for new drug tests and accelerate drug delivery.",
       "Built a React-based web app connected to a Neo4j graphical database and Flask back-end which extracts information from biomedical literature using Regular Expressions and NLP.",
-      "Developed a Python script that utilizes the Bio.Entrez API and BeautifulSoup to extract over 200 high-quality abstracts on HPLC-MS/MS from the PubMed database, thereby creating a large dataset for training.",
-      "Manually annotated keywords in 50 abstracts to create NER entities for a data corpus to train an NLP model, and further used RegEx to annotate keywords in abstracts, reducing manual annotation time by 200%.",
+      "Automated annotation of 1000+ scientific abstracts with Python, BeautifulSoup, NCBI Entrez API, and RegEx, accelerating research timelines and reducing labor costs.",
+      "Manually annotated keywords in 50 abstracts to create NER entities for a data corpus to train an NLP model, and further used RegEx to annotate keywords in abstracts.",
       "Trained, evaluated, and compared several NLP models (including vanilla BERT, BioBERT, spaCy, and RoBERTa, both pre-trained and untrained) to accurately extract assays from abstracts.",
     ],
   },
@@ -154,7 +194,7 @@ export const projectsData = [
 export const pages = ["HOME", "EXPERIENCE", "PROJECTS", "SKILLS"];
 
 export const skillsTable = [
-  { id: 0, category: 'Programming Languages', name: 'Assembly', type: 'Beginner', link: "/assets/SkillsIcons/Languages/assembly.svg" },
+  { id: 0, category: 'Programming Languages', name: 'x86 Assembly', type: 'Beginner', link: "/assets/SkillsIcons/Languages/assembly.svg" },
   { id: 1, category: 'Programming Languages', name: 'C', type: 'Advanced', link: "/assets/SkillsIcons/Languages/c.svg" },
   { id: 2, category: 'Programming Languages', name: 'C++', type: 'Intermediate', link: "/assets/SkillsIcons/Languages/cpp.svg" },
   { id: 3, category: 'Programming Languages', name: 'JavaScript', type: 'Advanced', link: "/assets/SkillsIcons/Languages/javascript.svg" },

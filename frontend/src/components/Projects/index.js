@@ -91,7 +91,27 @@ function Projects() {
                     )}
                     <ul>
                       {project.description.map((item, index) => {
-                        return <li style={{ color: 'white', fontSize: isXsUp ? '1rem' : '16px', fontFamily: "Poppins, sans-serif" }} key={index}>{item}</li>;
+                        if (typeof item === 'string') {
+                          return (
+                            <li style={{ color: 'white', fontSize: isXsUp ? '1rem' : '16px', fontFamily: "Poppins, sans-serif" }} key={index}>
+                              {item}
+                            </li>
+                          );
+                        } else {
+                          return (
+                            <li style={{ color: 'white', fontSize: isXsUp ? '1rem' : '16px', fontFamily: "Poppins, sans-serif" }} key={index}>
+                              {item.text}
+                              {item.links && item.links.map((link, linkIndex) => (
+                                <> 
+                                  {" "} 
+                                  <a href={link.url} style={{ color: '#D1D0D0', textDecoration: 'none' }} key={linkIndex}>
+                                    {link.text}
+                                  </a>
+                                </>
+                              ))}
+                            </li>
+                          );
+                        }
                       })}
                     </ul>
                   </Box>
