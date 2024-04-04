@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /*
+Disallow: /static/js/
+Sitemap: https://rsagar.dev/sitemap.xml
